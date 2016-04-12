@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/translucent"
+    android:orientation="vertical"
+    android:id="@+id/parent">
+
+
+    <ImageButton
+        android:id="@+id/rightImageBtn"
+        android:layout_width="50dp"
+        android:layout_height="@dimen/header_height"
+        android:layout_alignParentRight="true"
+        android:background="@color/transparent"
+        android:src="@drawable/attention_chat_plus"
+        android:layout_alignParentTop="true" />
+
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/attention_add_box"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="false"
+        android:layout_below="@+id/rightImageBtn"
+        android:layout_marginRight="12dp"
+        android:layout_marginTop="-5dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/layoutCreateGroup">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/attention_icon_chat"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/normal_deep_gray"
+                android:text="群聊"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="2dp"
+            android:src="@drawable/line_grey" />
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:id="@+id/layoutAddFriend">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/attention_icon_friends"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/normal_deep_gray"
+                android:text="加好友"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="2dp"
+            android:src="@drawable/line_grey" />
+    </LinearLayout>
+
+</RelativeLayout>

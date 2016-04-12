@@ -1,0 +1,10 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+android:id/background"
+        android:drawable="@drawable/shop_content_star_no" />
+    <item
+        android:id="@+android:id/secondaryProgress"
+        android:drawable="@drawable/shop_content_star_no">
+    </item>
+    <item android:id="@+android:id/progress"
+        android:drawable="@drawable/shop_content_star_sel" />
+</layer-list>

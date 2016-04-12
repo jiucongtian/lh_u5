@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/orange">
+
+        <FrameLayout
+            android:id="@+id/lytPortrait"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp">
+
+            <com.longhuapuxin.view.RoundCornerImageView
+                android:id="@+id/userIcon"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center_horizontal"
+
+                android:scaleType="centerCrop"
+
+                android:src="@drawable/avatar" />
+
+            <ImageView
+                android:id="@+id/iv_gender"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+
+                android:layout_gravity="bottom|right"
+                android:layout_marginLeft="3dp"
+                tools:src="@drawable/label_sex_man_round" />
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="20dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="60dp"
+            android:layout_toRightOf="@+id/lytPortrait"
+            android:src="@drawable/label_information_white" />
+
+        <TextView
+            android:id="@+id/txtIdStatus"
+            style="@style/normal_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="60dp"
+            android:layout_toRightOf="@+id/imageView2"
+            android:text="身份未认证" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="20dp"
+            android:layout_height="16dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="80dp"
+            android:layout_toRightOf="@+id/lytPortrait"
+            android:src="@drawable/label_certify_white" />
+
+        <TextView
+            android:id="@+id/txtBankStatus"
+            style="@style/normal_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="80dp"
+            android:layout_toRightOf="@+id/imageView3"
+            android:text="银行卡未认证" />
+
+        <TextView
+            android:id="@+id/tv_online"
+            style="@style/normal_white"
+            android:layout_width="55dp"
+            android:layout_height="25dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/label_top_content_box"
+            android:gravity="center"
+            android:textSize="14sp"
+            tools:text="在线" />
+
+        <TextView
+            android:id="@+id/tv_age"
+            style="@style/normal_white"
+            android:layout_width="55dp"
+            android:layout_height="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_toLeftOf="@+id/tv_online"
+            android:background="@drawable/label_top_content_box"
+            android:gravity="center"
+            android:text="0岁"
+            android:textSize="14sp" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:orientation="vertical"></LinearLayout>
+
+    <TextView
+        android:id="@+id/txtLabelName"
+        style="@style/normal_deep_gray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="专业绘画.生活服务"
+        android:textSize="20sp"
+
+        />
+
+    <TextView
+        android:id="@+id/txtPrice"
+        style="@style/normal_orange"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:textSize="20sp"
+        tools:text="150/张" />
+
+    <TextView
+        android:id="@+id/txtDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:text="描述" />
+
+</LinearLayout>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/photoLayout"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center" >
+
+        <ImageView
+            android:id="@+id/labelImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/photo_error" />
+
+        <ImageView
+            android:id="@+id/deleteImage"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_alignRight="@id/labelImage"
+            android:layout_alignTop="@id/labelImage"
+            android:scaleType="center"
+            android:src="@drawable/merchant_basics_modify_content_delete" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/addPhotoLayout"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center"
+        android:visibility="gone" >
+
+        <ImageView
+            android:id="@+id/addLocalImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="fitXY"
+            android:src="@drawable/space_add_photo" />
+
+    </RelativeLayout>
+
+</LinearLayout>

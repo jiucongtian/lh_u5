@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="horizontal" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp">
+
+
+                <com.longhuapuxin.view.RoundCornerImageView
+                    android:id="@+id/imageView1"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/avatar" />
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="12dp"
+                android:orientation="vertical" >
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                    <TextView
+                        android:id="@+id/itemName"
+                        style="@style/normal_deep_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+
+
+
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="TextView" />
+                    <ImageView
+                        android:id="@+id/iv_sex"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_toRightOf="@+id/itemName"
+                        android:src="@drawable/label_sex_man"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginLeft="10dp"
+                         />
+                    <TextView
+                        android:id="@+id/tv_age"
+                        style="@style/normal_deep_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                       android:layout_toRightOf="@+id/iv_sex"
+                        android:layout_marginLeft="10dp"
+                        android:text="0" />
+
+
+
+                    <TextView
+                        android:id="@+id/tv_online"
+                        style="@style/normal_green"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="在线" />
+
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:id="@+id/itemLabelName"
+                        style="@style/normal_black"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:text="陪吃饭" />
+                    <TextView
+                        android:id="@+id/itemPrice"
+                        style="@style/normal_orange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:text="100.00元/次" />
+
+                </RelativeLayout>
+
+                <com.longhuapuxin.view.MyGridView
+                    android:id="@+id/gridPhotos"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:numColumns="3"
+                    android:verticalSpacing="4dp"
+
+                    ></com.longhuapuxin.view.MyGridView>
+                <TextView
+                    android:id="@+id/txtNoPhoto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/s_small_deep_gray"
+                    android:layout_marginTop="10dp"
+                    android:text="当前用户没有上传图片"
+                    />
+
+                <TextView
+                    android:id="@+id/itemDescript"
+                    style="@style/s_small_deep_gray"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+
+                    android:ellipsize="end"
+                    android:singleLine="true"
+                    android:text="这家伙很懒，没有描述"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginRight="14dp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    >
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        tools:visibility="visible"
+                      >
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/label_information" />
+
+                        <TextView
+                            android:id="@+id/txtIdNo"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="身份证已认证" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        tools:visibility="visible"
+                        >
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/label_certify" />
+
+                        <TextView
+                            android:id="@+id/txtBankAccount"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="银行卡已认证" />
+
+                    </LinearLayout>
+                    <TextView
+                        android:id="@+id/itemDistance"
+                        style="@style/s_small_deep_gray"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:layout_centerHorizontal="true"
+                         android:layout_alignParentRight="true"
+
+                        android:text="0.1km" />
+                </RelativeLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

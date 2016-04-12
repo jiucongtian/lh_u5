@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal" >
+
+    <Button
+        android:id="@+id/label1"
+        style="@style/large_white"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@color/orange"
+        android:text="Button"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/label2"
+        style="@style/large_white"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@color/orange"
+        android:text="Button"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/label3"
+        style="@style/large_white"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginRight="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@color/orange"
+        android:text="Button"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/label4"
+        style="@style/large_white"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp"
+        android:layout_weight="1"
+        android:background="@color/orange"
+        android:text="Button"
+        android:visibility="invisible" />
+
+</LinearLayout>

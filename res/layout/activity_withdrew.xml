@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <TextView
+        android:id="@+id/tvSubmitWithdrew"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/footer_height"
+        android:gravity="center"
+        style="@style/normal_white"
+        android:text="立即提现"
+        android:background="@color/green"
+        android:layout_alignParentBottom="true" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:background="@color/bg_gray"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tvSubmitWithdrew">
+
+        <include layout="@layout/normal_header"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="温馨提示：提现首次免手续费，以后每笔提现收取1元手续费。"
+            android:gravity="left"
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="5dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="110dp"
+            android:background="@color/white">
+            <TextView
+                android:id="@+id/tvTotal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                style="@style/xxx_orange"
+                tools:text="500.00"
+                android:singleLine="true"
+                android:layout_centerInParent="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/normal_light_gray"
+                android:text="可提现余额："
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginTop="5dp">
+
+            <TextView
+                android:id="@+id/tvBankName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                style="@style/normal_orange"
+                tools:text="中国银行"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp" />
+
+            <TextView
+                android:id="@+id/tvBankNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/normal_deep_gray"
+                tools:text="6228*******0018"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="5dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView9"
+                android:src="@drawable/line_grey"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="15dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/normal_deep_gray"
+                    android:text="身份证：" />
+
+                <TextView
+                    android:id="@+id/tvIdNo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/normal_deep_gray"
+                    tools:text="511124" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageView10"
+                android:src="@drawable/line_grey"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="2dp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/normal_deep_gray"
+                        android:text="手续费：" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/normal_orange"
+                        android:text="1.00元" />
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/etAmount"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="20dp"
+                    android:singleLine="true"
+                    android:background="@color/light_gray"
+                    android:hint="请输入提现金额"
+                    android:gravity="center" />
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+</RelativeLayout>

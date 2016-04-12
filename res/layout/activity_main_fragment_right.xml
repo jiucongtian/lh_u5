@@ -1,0 +1,123 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/bg_gray" >
+
+    <!-- Footer aligned to bottom -->
+
+    <RelativeLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_footer_height"
+        android:background="@drawable/tab_bg_white"
+        android:layout_alignParentBottom="true" >
+
+        <ImageView
+            android:id="@+id/imgFeeling"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginBottom="2dp"
+            android:src="@drawable/tab_centre_iocn"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_toLeftOf="@+id/imgFeeling">
+
+            <ImageButton
+                android:id="@+id/imgLabelBtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:scaleType="center"
+                android:src="@drawable/btn_main_label" />
+
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_gravity="center_horizontal">
+
+                <ImageButton
+                    android:id="@+id/imgMessageBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent"
+                    android:scaleType="center"
+                    android:src="@drawable/btn_main_message" />
+
+                <ImageView
+                    android:id="@+id/redPoint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="15dp"
+                    android:src="@drawable/red_point"
+                    tools:visibility="visible"
+                    android:visibility="invisible"
+                    android:layout_gravity="right" />
+            </FrameLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:visibility="visible"
+            android:layout_marginBottom="1dp"
+            android:layout_marginTop="4dp"
+            android:layout_toRightOf="@+id/imgFeeling">
+
+            <ImageButton
+                android:id="@+id/imgShopBtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:scaleType="center"
+                android:src="@drawable/btn_main_shop" />
+
+            <ImageButton
+                android:id="@+id/imgContactBtn"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/transparent"
+                android:scaleType="center"
+                android:src="@drawable/btn_main_contacts" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/footer"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
+        <!-- header -->
+
+
+        <!-- body layout -->
+
+        <FrameLayout
+            android:id="@+id/fragmentContainer"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true" >
+        </FrameLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,101 @@
+apply plugin: 'android'
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.5.0'
+    }
+}
+
+dependencies {
+    compile fileTree(include: '*.jar', dir: 'libs')
+
+}
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "23.0.1"
+
+    defaultConfig {
+        // 应用的包名
+        applicationId "com.longhuapuxin.u5"
+        versionCode 53
+        versionName "1.6.8"
+        minSdkVersion 11
+        targetSdkVersion 19
+        buildConfigField "String", "API_HOST", "\"http://192.168.0.58\""
+        buildConfigField "String", "ASSET_HOST", "\"http://192.168.0.58/Images/\""
+        buildConfigField "String", "MQTT_HOST", "\"192.168.0.58\""
+    }
+
+
+    signingConfigs {
+        release {
+            storeFile file("u5_publish_key")
+            storePassword "lh!123456"
+            keyAlias "u5"
+            keyPassword "lh!123456"
+        }
+    }
+
+    buildTypes {
+        dev {
+            signingConfig signingConfigs.release
+        }
+        debug {
+            signingConfig signingConfigs.release
+
+            buildConfigField "boolean", "U5_DEBUG", "true"
+            buildConfigField "String", "API_HOST", "\"http://api.longhuapuxin.com\""
+            buildConfigField "String", "ASSET_HOST", "\"http://asset.longhuapuxin.com/\""
+            buildConfigField "String", "MQTT_HOST", "\"120.26.79.216\""
+        }
+        release {
+            signingConfig signingConfigs.release
+            buildConfigField "boolean", "U5_DEBUG", "false"
+            buildConfigField "String", "API_HOST", "\"http://api.longhuapuxin.com\""
+            buildConfigField "String", "ASSET_HOST", "\"http://asset.longhuapuxin.com/\""
+            buildConfigField "String", "MQTT_HOST", "\"120.26.79.216\""
+        }
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+    // 移除lint检查的error
+    lintOptions {
+        abortOnError false
+    }
+}
+
+subprojects {
+    gradle.projectsEvaluated {
+        tasks.withType(Compile) {
+            options.compilerArgs << "-Xlint:unchecked -Xlint:deprecation"
+        }
+    }
+}
+

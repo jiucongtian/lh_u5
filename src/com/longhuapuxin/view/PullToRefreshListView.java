@@ -1,0 +1,614 @@
+package com.longhuapuxin.view;
+
+import java.util.Date;
+
+import android.content.Context;
+import android.graphics.drawable.AnimationDrawable;
+import android.util.AttributeSet;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
+import android.view.View;
+import android.view.ViewGroup;
+import android.view.animation.LinearInterpolator;
+import android.view.animation.RotateAnimation;
+import android.widget.AbsListView;
+import android.widget.AbsListView.OnScrollListener;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+import com.longhuapuxin.u5.R;
+
+//PullToRefreshListView
+public class PullToRefreshListView extends ListView implements OnScrollListener {
+
+	public interface IListViewState {
+		int LVS_NORMAL = 0; // 普通状态
+		int LVS_PULL_REFRESH = 1; // 下拉刷新状态
+		int LVS_RELEASE_REFRESH = 2; // 松开刷新状态
+		int LVS_LOADING = 3; // 加载状态
+	}
+
+	public interface IOnRefreshListener {
+		void OnRefresh();
+	}
+
+	private View mHeadView;
+	private TextView mRefreshTextview;
+	private TextView mHeadLastUpdateTextView;
+	private ImageView mHeadArrowImageView;
+	private ImageView mHeadUseGuide;
+	private int mHeadContentWidth;
+	private int mHeadContentHeight;
+	private int mFootContentWidth;
+	private int mFootContentHeight;
+	private IOnRefreshListener mOnRefreshListener; // 头部刷新监听器
+
+	// 用于保证startY的值在一个完整的touch事件中只被记录一次
+	private boolean mHeadIsRecord = false;
+	private boolean mFootIsRecord = false;
+	// 标记的Y坐标值
+	private int mHeadStartY = 0;
+	private int mFootStartY = 0;
+	// 当前视图能看到的第一个项的索引
+	private int mFirstItemIndex = -1;
+	// 当前视图能看到的索引
+	private int mVisibleItemCount = -1;
+	// 当前视图全部的索引
+	private int mTotalItemCount = -1;
+	// MOVE时保存的Y坐标值
+	private int mHeadMoveY = 0;
+	private int mFootMoveY = 0;
+	// LISTVIEW状态
+	private int mViewState = IListViewState.LVS_NORMAL;
+
+	private final static int RATIO = 2;
+
+	private RotateAnimation animation;
+	private RotateAnimation reverseAnimation;
+	private boolean mHeadBack = false;
+	private boolean mFootBack = false;
+
+	public PullToRefreshListView(Context context) {
+		super(context);
+		init(context);
+	}
+
+	public PullToRefreshListView(Context context, AttributeSet attrs) {
+		super(context, attrs);
+		init(context);
+	}
+
+	public void setOnRefreshListener(IOnRefreshListener listener) {
+		mOnRefreshListener = listener;
+	}
+
+	// 下拉刷新数据
+	private void onRefresh() {
+		if (mOnRefreshListener != null) {
+			mOnRefreshListener.OnRefresh();
+		}
+	}
+
+	public void onRefreshComplete() {
+		mHeadView.setPadding(0, -1 * mHeadContentHeight, 0, 0);
+		mHeadLastUpdateTextView.setText("最近更新:" + new Date().toLocaleString());
+		switchViewState(IListViewState.LVS_NORMAL);
+	}
+
+	private void init(Context context) {
+		setOnScrollListener(this);
+
+		initHeadView(context);
+
+		initLoadMoreView(context);
+	}
+
+	// 初始化headview试图
+	private void initHeadView(Context context) {
+		mHeadView = LayoutInflater.from(context).inflate(
+				R.layout.pull_to_refresh_head, null);
+
+		mHeadArrowImageView = (ImageView) mHeadView
+				.findViewById(R.id.head_arrowImageView);
+		mHeadArrowImageView.setMinimumWidth(60);
+
+		mRefreshTextview = (TextView) mHeadView
+				.findViewById(R.id.head_tipsTextView);
+		mHeadUseGuide = (ImageView) findViewById(R.id.head_use_guide);
+		mHeadLastUpdateTextView = (TextView) mHeadView
+				.findViewById(R.id.head_lastUpdatedTextView);
+
+		measureView(mHeadView);
+		mHeadContentHeight = mHeadView.getMeasuredHeight();
+		mHeadContentWidth = mHeadView.getMeasuredWidth();
+
+		mHeadView.setPadding(0, -1 * mHeadContentHeight, 0, 0);
+		mHeadView.invalidate();
+
+		addHeaderView(mHeadView, null, false);
+
+		animation = new RotateAnimation(0, -180,
+				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
+				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
+		animation.setInterpolator(new LinearInterpolator());
+		animation.setDuration(250);
+		animation.setFillAfter(true);
+
+		reverseAnimation = new RotateAnimation(-180, 0,
+				RotateAnimation.RELATIVE_TO_SELF, 0.5f,
+				RotateAnimation.RELATIVE_TO_SELF, 0.5f);
+		reverseAnimation.setInterpolator(new LinearInterpolator());
+		reverseAnimation.setDuration(200);
+		reverseAnimation.setFillAfter(true);
+	}
+
+	// 初始化footview试图
+	private void initLoadMoreView(Context context) {
+		mFootView = LayoutInflater.from(context).inflate(
+				R.layout.pull_to_refresh_loadmore, null);
+
+		mLoadMoreTextView = (TextView) mFootView
+				.findViewById(R.id.foot_tipsTextView);
+		mLoadingView = (ImageView) mFootView
+				.findViewById(R.id.foot_arrowImageView);
+		mLoadingView.setMinimumWidth(60);
+		mFootUseGuide = (ImageView) mFootView.findViewById(R.id.foot_use_guide);
+		measureView(mFootView);
+
+		mFootContentHeight = mFootView.getMeasuredHeight();
+
+		mFootContentWidth = mFootView.getMeasuredWidth();
+
+		mFootView.setPadding(0, 0, 0, -1 * mFootContentHeight);
+
+		mFootView.invalidate();
+
+		addFooterView(mFootView);
+
+	}
+
+	// 此方法直接照搬自网络上的一个下拉刷新的demo，计算headView的width以及height
+	private void measureView(View child) {
+		ViewGroup.LayoutParams p = child.getLayoutParams();
+		if (p == null) {
+			p = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.FILL_PARENT,
+					ViewGroup.LayoutParams.WRAP_CONTENT);
+		}
+		int childWidthSpec = ViewGroup.getChildMeasureSpec(0, 0 + 0, p.width);
+		int lpHeight = p.height;
+		int childHeightSpec;
+		if (lpHeight > 0) {
+			childHeightSpec = MeasureSpec.makeMeasureSpec(lpHeight,
+					MeasureSpec.EXACTLY);
+		} else {
+			childHeightSpec = MeasureSpec.makeMeasureSpec(0,
+					MeasureSpec.UNSPECIFIED);
+		}
+		child.measure(childWidthSpec, childHeightSpec);
+	}
+
+	public void onScroll(AbsListView arg0, int firstVisiableItem,
+			int visibleItemCount, int totalItemCount) {
+		mFirstItemIndex = firstVisiableItem;
+		mVisibleItemCount = visibleItemCount;
+		mTotalItemCount = totalItemCount;
+	}
+
+	public void onScrollStateChanged(AbsListView arg0, int arg1) {
+
+	}
+
+	@Override
+	public boolean onTouchEvent(MotionEvent ev) {
+
+		if (mOnRefreshListener != null) {
+			switch (ev.getAction()) {
+			case MotionEvent.ACTION_DOWN:
+				doHeadActionDown(ev);
+				break;
+			case MotionEvent.ACTION_MOVE:
+				doHeadActionMove(ev);
+				break;
+			case MotionEvent.ACTION_UP:
+				doHeadActionUp(ev);
+				break;
+			default:
+				break;
+			}
+		}
+		if (mLoadMoreListener != null) {
+			switch (ev.getAction()) {
+			case MotionEvent.ACTION_DOWN:
+				doFootActionDown(ev);
+				break;
+			case MotionEvent.ACTION_MOVE:
+				doFootActionMove(ev);
+				break;
+			case MotionEvent.ACTION_UP:
+				doFootActionUp(ev);
+				break;
+			default:
+				break;
+			}
+		}
+
+		return super.onTouchEvent(ev);
+	}
+
+	private void doHeadActionDown(MotionEvent ev) {
+		if (mHeadIsRecord == false && mFirstItemIndex == 0) {
+			mHeadStartY = (int) ev.getY();
+			mHeadIsRecord = true;
+		}
+	}
+
+	private void doFootActionDown(MotionEvent ev) {
+		if (mFootIsRecord == false
+				&& mFirstItemIndex + mVisibleItemCount == mTotalItemCount) {
+			mFootStartY = (int) ev.getY();
+			mFootIsRecord = true;
+		}
+	}
+
+	private void doHeadActionMove(MotionEvent ev) {
+		mHeadMoveY = (int) ev.getY();
+
+		if (mHeadIsRecord == false && mFirstItemIndex == 0) {
+			mHeadStartY = (int) ev.getY();
+			mHeadIsRecord = true;
+		}
+
+		if (mHeadIsRecord == false || mViewState == IListViewState.LVS_LOADING) {
+			return;
+		}
+
+		int offset = (mHeadMoveY - mHeadStartY) / RATIO;
+
+		switch (mViewState) {
+		case IListViewState.LVS_NORMAL: {
+			// headview不可见 NORMAL状态
+			if (offset > 0) {
+				mHeadView.setPadding(0, offset - mHeadContentHeight, 0, 0);
+				switchViewState(IListViewState.LVS_PULL_REFRESH);
+			}
+		}
+			break;
+		case IListViewState.LVS_PULL_REFRESH: {
+			setSelection(0);
+			mHeadView.setPadding(0, offset - mHeadContentHeight, 0, 0);
+			if (offset < 0) {
+				switchViewState(IListViewState.LVS_NORMAL);
+			} else if (offset > mHeadContentHeight) {
+				switchViewState(IListViewState.LVS_RELEASE_REFRESH);
+			}
+		}
+			break;
+		case IListViewState.LVS_RELEASE_REFRESH: {
+			setSelection(0);
+			mHeadView.setPadding(0, offset - mHeadContentHeight, 0, 0);
+			if (offset >= 0 && offset <= mHeadContentHeight) {
+				mHeadBack = true;
+				switchViewState(IListViewState.LVS_PULL_REFRESH);
+			} else if (offset < 0) {
+				switchViewState(IListViewState.LVS_NORMAL);
+			} else {
+
+			}
+
+		}
+			break;
+		default:
+			return;
+		}
+		;
+
+	}
+
+	private void doFootActionMove(MotionEvent ev) {
+		mFootMoveY = (int) ev.getY();
+		if (mFootIsRecord == false
+				&& mFirstItemIndex + mVisibleItemCount == mTotalItemCount) {
+			mFootStartY = (int) ev.getY();
+			mFootIsRecord = true;
+		}
+
+		if (mFootIsRecord == false
+				|| mLoadMoreState == ILoadMoreViewState.LMVS_LOADING) {
+			return;
+		}
+		// 向上滑时，offset是负的
+		int offset = (mFootMoveY - mFootStartY) / RATIO;
+		Log.d("", "!!!!!!!offset" + offset);
+		switch (mLoadMoreState) {
+		case ILoadMoreViewState.LMVS_NORMAL: {
+			// footview不可见 NORMAL状态
+			if (offset < 0) {
+				mFootView.setPadding(0, 0, 0, -offset - mFootContentHeight);
+				updateLoadMoreViewState(ILoadMoreViewState.LMVS_PULL_REFRESH);
+			}
+		}
+			break;
+		case ILoadMoreViewState.LMVS_PULL_REFRESH: {
+			setSelection(mTotalItemCount - 1);
+			mFootView.setPadding(0, 0, 0, -offset - mFootContentHeight);
+			if (offset > 0) {
+				updateLoadMoreViewState(ILoadMoreViewState.LMVS_NORMAL);
+			} else if (-offset > mFootContentHeight) {
+				updateLoadMoreViewState(ILoadMoreViewState.LMVS_RELEASE_REFRESH);
+			}
+		}
+			break;
+		case ILoadMoreViewState.LMVS_RELEASE_REFRESH: {
+			setSelection(mTotalItemCount - 1);
+			mFootView.setPadding(0, 0, 0, -offset - mFootContentHeight);
+			if (offset <= 0 && -offset <= mFootContentHeight) {
+				mFootBack = true;
+				// switchViewState(IListViewState.LVS_PULL_REFRESH);
+				updateLoadMoreViewState(ILoadMoreViewState.LMVS_PULL_REFRESH);
+			} else if (offset > 0) {
+				// switchViewState(IListViewState.LVS_NORMAL);
+				updateLoadMoreViewState(ILoadMoreViewState.LMVS_NORMAL);
+			} else {
+
+			}
+
+		}
+			break;
+		default:
+			return;
+		}
+		;
+	}
+
+	private void doHeadActionUp(MotionEvent ev) {
+		mHeadIsRecord = false;
+		mHeadBack = false;
+
+		if (mViewState == IListViewState.LVS_LOADING) {
+			return;
+		}
+
+		switch (mViewState) {
+		case IListViewState.LVS_NORMAL:
+
+			break;
+		case IListViewState.LVS_PULL_REFRESH:
+			mHeadView.setPadding(0, -1 * mHeadContentHeight, 0, 0);
+			switchViewState(IListViewState.LVS_NORMAL);
+			break;
+		case IListViewState.LVS_RELEASE_REFRESH:
+			mHeadView.setPadding(0, 0, 0, 0);
+			switchViewState(IListViewState.LVS_LOADING);
+			onRefresh();
+			break;
+		}
+
+	}
+
+	private void doFootActionUp(MotionEvent ev) {
+		mFootIsRecord = false;
+		mFootBack = false;
+
+		if (mLoadMoreState == ILoadMoreViewState.LMVS_LOADING) {
+			return;
+		}
+
+		switch (mLoadMoreState) {
+		case ILoadMoreViewState.LMVS_NORMAL:
+
+			break;
+		case ILoadMoreViewState.LMVS_PULL_REFRESH:
+			mFootView.setPadding(0, 0, 0, -1 * mFootContentHeight);
+			// switchViewState(IListViewState.LVS_NORMAL);
+			updateLoadMoreViewState(ILoadMoreViewState.LMVS_NORMAL);
+			break;
+		case ILoadMoreViewState.LMVS_RELEASE_REFRESH:
+			mFootView.setPadding(0, 0, 0, 0);
+			// switchViewState(IListViewState.LVS_LOADING);
+			updateLoadMoreViewState(ILoadMoreViewState.LMVS_LOADING);
+			// onRefresh();
+			mLoadMoreListener.OnLoadMore();
+			break;
+		}
+
+	}
+
+	// 切换headview视图
+	private void switchViewState(int state) {
+
+		switch (state) {
+		case IListViewState.LVS_NORMAL: {
+			Log.e("!!!!!!!!!!!", "convert to IListViewState.LVS_NORMAL");
+			mHeadArrowImageView.clearAnimation();
+			mHeadArrowImageView.setImageResource(R.drawable.refresh_down);
+		}
+			break;
+		case IListViewState.LVS_PULL_REFRESH: {
+			Log.e("!!!!!!!!!!!", "convert to IListViewState.LVS_PULL_REFRESH");
+			mHeadUseGuide.setVisibility(View.GONE);
+			stopHeadUserGuideAnimation();
+			mHeadArrowImageView.setVisibility(View.VISIBLE);
+			mRefreshTextview.setText("下拉可以刷新");
+			mHeadArrowImageView.clearAnimation();
+
+			// 是由RELEASE_To_REFRESH状态转变来的
+			if (mHeadBack) {
+				mHeadBack = false;
+				mHeadArrowImageView.clearAnimation();
+				mHeadArrowImageView.startAnimation(reverseAnimation);
+			}
+		}
+			break;
+		case IListViewState.LVS_RELEASE_REFRESH: {
+			Log.e("!!!!!!!!!!!",
+					"convert to IListViewState.LVS_RELEASE_REFRESH");
+			mHeadUseGuide.setVisibility(View.GONE);
+			stopHeadUserGuideAnimation();
+			mHeadArrowImageView.setVisibility(View.VISIBLE);
+			mRefreshTextview.setText("松开获取更多");
+			mHeadArrowImageView.clearAnimation();
+			mHeadArrowImageView.startAnimation(animation);
+		}
+			break;
+		case IListViewState.LVS_LOADING: {
+			Log.e("!!!!!!!!!!!", "convert to IListViewState.LVS_LOADING");
+			mHeadUseGuide.setVisibility(View.VISIBLE);
+			startHeadUserGuideAnimation();
+			mHeadArrowImageView.clearAnimation();
+			mHeadArrowImageView.setVisibility(View.GONE);
+			mRefreshTextview.setText("载入中...");
+		}
+			break;
+		default:
+			return;
+		}
+
+		mViewState = state;
+
+	}
+
+	private View mFootView;
+	private TextView mLoadMoreTextView;
+	private ImageView mLoadingView;
+	private ImageView mFootUseGuide;
+	private IOnLoadMoreListener mLoadMoreListener; // 加载更多监听器
+	private int mLoadMoreState = ILoadMoreViewState.LMVS_NORMAL;
+
+	public interface ILoadMoreViewState {
+		// int LMVS_NORMAL = 0; // 普通状态
+		// int LMVS_LOADING = 1; // 加载状态
+		// int LMVS_OVER = 2; // 结束状态
+
+		int LMVS_NORMAL = 0; // 普通状态
+		int LMVS_PULL_REFRESH = 1; // 上拉刷新状态
+		int LMVS_RELEASE_REFRESH = 2; // 松开刷新状态
+		int LMVS_LOADING = 3; // 加载状态
+		int LMVS_OVER = 4; // 结束状态
+	}
+
+	// 上拉加载更多数据
+	public interface IOnLoadMoreListener {
+		void OnLoadMore();
+	}
+
+	public void setOnLoadMoreListener(IOnLoadMoreListener listener) {
+		mLoadMoreListener = listener;
+	}
+
+	// flag 数据是否已全部加载完毕
+	public void onLoadMoreComplete(boolean flag) {
+		if (flag) {
+			mFootView.setPadding(0, 0, 0, 0);
+			updateLoadMoreViewState(ILoadMoreViewState.LMVS_OVER);
+			setSelection(getFirstVisiblePosition());
+		} else {
+			mFootView.setPadding(0, 0, 0, -1 * mFootContentHeight);
+			setSelection(getFirstVisiblePosition() + 1);
+			updateLoadMoreViewState(ILoadMoreViewState.LMVS_NORMAL);
+		}
+
+	}
+
+	// 更新footview视图
+	private void updateLoadMoreViewState(int state) {
+		switch (state) {
+		case ILoadMoreViewState.LMVS_NORMAL: {
+			Log.d("!!!!!!!!!!!", "------convert to IListViewState.LMVS_NORMAL");
+			mLoadingView.clearAnimation();
+			mLoadingView.setImageResource(R.drawable.refresh_up);
+		}
+			break;
+		case ILoadMoreViewState.LMVS_PULL_REFRESH: {
+			Log.d("!!!!!!!!!!!",
+					"------convert to IListViewState.LMVS_PULL_REFRESH");
+			mFootUseGuide.setVisibility(View.GONE);
+			stopFootUserGuideAnimation();
+			mLoadingView.setVisibility(View.VISIBLE);
+			mLoadMoreTextView.setText("上拉可以刷新");
+			mLoadingView.clearAnimation();
+			// 是由RELEASE_To_REFRESH状态转变来的
+			if (mFootBack) {
+				mFootBack = false;
+				mLoadingView.clearAnimation();
+				mLoadingView.startAnimation(reverseAnimation);
+			}
+		}
+			break;
+		case ILoadMoreViewState.LMVS_RELEASE_REFRESH: {
+			Log.d("!!!!!!!!!!!",
+					"------convert to IListViewState.LMVS_RELEASE_REFRESH");
+			mFootUseGuide.setVisibility(View.GONE);
+			stopFootUserGuideAnimation();
+			mLoadingView.setVisibility(View.VISIBLE);
+			mLoadMoreTextView.setText("松开获取更多");
+			mLoadingView.clearAnimation();
+			mLoadingView.startAnimation(animation);
+		}
+			break;
+		case ILoadMoreViewState.LMVS_LOADING: {
+			Log.d("!!!!!!!!!!!", "------convert to IListViewState.LMVS_LOADING");
+			mFootUseGuide.setVisibility(View.VISIBLE);
+			startFootUserGuideAnimation();
+			mLoadingView.clearAnimation();
+			mLoadingView.setVisibility(View.GONE);
+			mLoadMoreTextView.setText("载入中...");
+		}
+			break;
+		case ILoadMoreViewState.LMVS_OVER: {
+			Log.d("!!!!!!!!!!!", "------convert to IListViewState.LMVS_OVER");
+			mFootUseGuide.setVisibility(View.GONE);
+			stopFootUserGuideAnimation();
+			mLoadingView.clearAnimation();
+			mLoadingView.setVisibility(View.GONE);
+			mLoadMoreTextView.setText("数据都加载完成");
+		}
+
+			break;
+		default:
+			return;
+		}
+
+		mLoadMoreState = state;
+	}
+
+	private AnimationDrawable mHeadAnimationDrawable;
+
+	private void startHeadUserGuideAnimation() {
+		mHeadAnimationDrawable = (AnimationDrawable) mHeadUseGuide
+				.getDrawable();
+		if (!mHeadAnimationDrawable.isRunning()) {
+			mHeadAnimationDrawable.start();
+		}
+
+	}
+
+	private void stopHeadUserGuideAnimation() {
+		if (mHeadAnimationDrawable != null) {
+			if (mHeadAnimationDrawable.isRunning()) {
+				mHeadAnimationDrawable.stop();
+			}
+		}
+	}
+
+	private AnimationDrawable mFootAnimationDrawable;
+
+	private void startFootUserGuideAnimation() {
+		mFootAnimationDrawable = (AnimationDrawable) mFootUseGuide
+				.getDrawable();
+		if (!mFootAnimationDrawable.isRunning()) {
+			mFootAnimationDrawable.start();
+		}
+
+	}
+
+	private void stopFootUserGuideAnimation() {
+		if (mFootAnimationDrawable != null) {
+			if (mFootAnimationDrawable.isRunning()) {
+				mFootAnimationDrawable.stop();
+			}
+		}
+	}
+
+}

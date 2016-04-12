@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+     android:background="@color/white"
+    android:orientation="vertical" >
+    
+  <include layout="@layout/normal_header" />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" >
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" >
+
+          <RadioButton
+              android:id="@+id/r1"
+              style="@style/MyCheckBox"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="  1豆"
+              android:textColor="@color/deep_gray" />
+
+      </LinearLayout>
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:layout_weight="2"
+          android:text=""
+          android:textColor="@color/dark_gray" />
+
+  </LinearLayout>
+
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/line_grey" />
+   <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" >
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" >
+
+          <RadioButton
+              android:id="@+id/r2"
+              style="@style/MyCheckBox"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:checked="true"
+              android:text="  50豆"
+              android:textColor="@color/deep_gray" />
+
+      </LinearLayout>
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:layout_weight="2"
+          android:text="（购买送5豆）"
+          android:textColor="@color/dark_gray" />
+
+  </LinearLayout>
+
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/line_grey" />
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" >
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" >
+
+          <RadioButton
+              android:id="@+id/r3"
+              style="@style/MyCheckBox"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="  100豆"
+              android:textColor="@color/deep_gray" />
+
+      </LinearLayout>
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:layout_weight="2"
+          android:text="（购买送15豆）"
+          android:textColor="@color/dark_gray" />
+
+  </LinearLayout>
+
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/line_grey" />
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" >
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" >
+
+          <RadioButton
+              android:id="@+id/r4"
+              style="@style/MyCheckBox"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="  200豆"
+              android:textColor="@color/deep_gray" />
+
+      </LinearLayout>
+
+      <TextView
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:layout_weight="2"
+          android:text="（购买送40豆）"
+          android:textColor="@color/dark_gray" />
+
+  </LinearLayout>
+
+  <ImageView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/line_grey" /> 
+      <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" >
+
+      <LinearLayout
+          android:layout_width="0dp"
+          android:layout_height="match_parent"
+          android:layout_weight="1" >
+
+          <RadioButton
+              android:id="@+id/r5"
+              style="@style/MyCheckBox"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="  500豆"
+              android:textColor="@color/deep_gray" />
+
+      </LinearLayout>
+
+      <TextView
+          android:id="@+id/textView1"
+          android:layout_width="0dp"
+          android:layout_height="wrap_content"
+          android:layout_margin="10dp"
+          android:layout_weight="2"
+          android:text="（购买送100豆）"
+          android:textColor="@color/dark_gray" />
+
+  </LinearLayout>
+
+  <ImageView
+      android:id="@+id/imageView1"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/line_grey" />
+
+  <TextView
+      android:id="@+id/TextView01"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp"
+      android:text="说明："
+      android:textColor="@color/dark_gray" />
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content" >
+
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginLeft="10dp"
+          android:textColor="@color/dark_gray" 
+          android:text="充值送U豆活动一直持续到" />
+
+       <TextView
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text="2015-12-31"
+           android:textColor="@color/orange" />
+
+        <TextView
+          android:id="@+id/textView2"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          
+          android:textColor="@color/dark_gray" 
+          android:text="日。" />
+
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="10dp" >
+
+      <TextView
+          android:id="@+id/textView3"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="应    付："
+          android:textColor="@color/deep_gray" />
+
+      <TextView
+          android:id="@+id/txtTotal"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="￥50"
+          android:textColor="@color/orange"
+          android:textSize="32sp" />
+
+  </LinearLayout>
+
+  <Button
+      android:id="@+id/btnPay"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_gravity="center"
+      android:layout_marginTop="10dp"
+      android:background="@color/green"
+      android:paddingBottom="10dp"
+      android:paddingLeft="40dp"
+      android:paddingRight="40dp"
+      android:paddingTop="10dp"
+      android:text="支付宝支付"
+      android:textColor="@color/white" />
+ 
+</LinearLayout>

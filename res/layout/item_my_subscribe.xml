@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/profile_content_deal_bg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_title_time"
+            style="@style/normal_deep_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="时        间：" />
+
+        <TextView
+            android:id="@+id/tv_date"
+            style="@style/normal_deep_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_title_time"
+            tools:text="2010-10-9" />
+
+        <TextView
+            android:id="@+id/tv_duration"
+            style="@style/normal_deep_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/tv_date"
+            tools:text="10:00-11:00" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_title_shop_name"
+            style="@style/normal_deep_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="店       铺：" />
+
+        <TextView
+            android:id="@+id/tv_shop_name"
+            style="@style/normal_deep_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_title_shop_name"
+            tools:text="韩式美衣" />
+
+        <TextView
+            android:id="@+id/tv_title_order"
+            style="@style/normal_deep_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_toRightOf="@id/tv_title_shop_name"
+            android:text="电       话：" />
+
+        <TextView
+            android:id="@+id/tv_number"
+            style="@style/normal_deep_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_title_order"
+            android:text="0000001" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_title_product"
+            style="@style/normal_deep_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="产       品：" />
+
+        <TextView
+            android:id="@+id/tv_product_content"
+            style="@style/normal_deep_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_title_product"
+            tools:text="颜色，大小，希望准时付款。" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_title_content"
+            style="@style/normal_deep_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="内       容：" />
+
+        <TextView
+            android:id="@+id/tv_content"
+            style="@style/normal_deep_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/tv_title_content"
+            tools:text="颜色，大小，希望准时付款。" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:gravity="center_vertical">
+
+
+        <Button
+            android:id="@+id/status_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:text="查看评价"
+            android:textColor="@color/orange" />
+
+
+        <RelativeLayout
+            android:id="@+id/status_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="right">
+
+            <Button
+                android:id="@+id/status_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@android:color/transparent"
+                android:text="已取消"
+                android:textColor="@color/orange" />
+
+            <Button
+                android:id="@+id/status_refuse"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@android:color/transparent"
+                android:text="已拒绝"
+                android:textColor="@color/orange" />
+
+            <Button
+                android:id="@+id/status_meet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@android:color/transparent"
+                android:text="已上门服务"
+                android:textColor="@color/orange" />
+
+            <Button
+                android:id="@+id/status_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@android:color/transparent"
+                android:text="已付款"
+                android:textColor="@color/orange" />
+
+            <Button
+                android:id="@+id/status_wait"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:background="@android:color/transparent"
+                android:text="等待回复"
+                android:textColor="@color/orange" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/status_consume"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:orientation="horizontal"
+            tools:visibility="visible"
+            android:visibility="gone">
+
+
+            <Button
+                android:id="@+id/btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:text="取消"
+                android:textColor="@color/orange" />
+
+            <Button
+                android:id="@+id/btn_pay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:background="@android:color/transparent"
+                android:text="付款"
+                android:textColor="@color/orange" />
+
+            <Button
+                android:id="@+id/btn_service"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:background="@android:color/transparent"
+                android:text="上门服务"
+                android:textColor="@color/orange" />
+        </LinearLayout>
+    </RelativeLayout>
+</LinearLayout>

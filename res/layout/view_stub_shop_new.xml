@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        android:orientation="vertical" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/home_search_bg"
+            android:orientation="horizontal" >
+
+            <ImageView
+                android:id="@+id/searchBtn"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="0dp"
+                android:scaleType="centerInside"
+                android:src="@drawable/home_search" />
+
+            <EditText
+                android:id="@+id/search_editor"
+                style="@style/s_small_orange"
+                android:layout_width="230dp"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="22dp"
+                android:background="@color/transparent"
+                android:focusable="true"
+                android:hint="@string/shop_search"
+                android:maxLines="1"
+                android:singleLine="true"
+                android:textColorHint="@color/orange" >
+            </EditText>
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/bigImageFood"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@drawable/shops_content_picture_ad" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp">
+
+            <ImageView
+                android:id="@+id/imgFood"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/shops_content_food" />
+            <ImageView
+                android:id="@+id/imgClothes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/shops_content_clothes" />
+            <ImageView
+                android:id="@+id/imgInnovation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/shops_content_originality" />
+            <ImageView
+                android:id="@+id/imgHappiness"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dp"
+                android:layout_weight="1"
+                android:src="@drawable/shops_content_entertainment" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/bigImageClothes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@drawable/shops_content_picture_ad_1"
+            android:layout_marginBottom="10dp" />
+        <ImageView
+            android:id="@+id/bigImageInnovation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@drawable/shops_content_picture_ad_2"
+            android:layout_marginBottom="10dp" />
+        <ImageView
+            android:id="@+id/bigImageHappiness"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:scaleType="centerCrop"
+            android:src="@drawable/shops_content_amusement" />
+    </LinearLayout>
+
+</ScrollView>

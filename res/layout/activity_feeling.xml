@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:background="@color/bg_gray"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       
+        android:orientation="vertical" >
+
+        <include layout="@layout/normal_header" />
+
+        <com.longhuapuxin.u5.pullable.PullToRefreshLayout
+            android:id="@+id/refresh_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+
+            <include layout="@layout/refresh_head" />
+
+            <com.longhuapuxin.u5.pullable.PullableScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <WebView
+                    android:id="@+id/content_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </com.longhuapuxin.u5.pullable.PullableScrollView>
+
+            <include layout="@layout/load_more" />
+        </com.longhuapuxin.u5.pullable.PullToRefreshLayout>
+
+    </LinearLayout>
+
+	<RelativeLayout
+	    android:id="@+id/layoutInput"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    
+	    android:visibility="invisible" >
+
+		<LinearLayout
+		    android:layout_width="match_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_alignParentBottom="true"
+		    android:background="@color/bg_gray"
+		     >
+
+			<EditText
+			    android:id="@+id/txtContent"
+			    android:layout_width="wrap_content"
+			    android:layout_height="40dp"
+			    android:layout_margin="4dp"
+			    android:layout_weight="1"
+			    android:background="@drawable/editround"
+			    android:ems="10"
+			    android:inputType="textMultiLine" >
+
+			    <requestFocus />
+			</EditText>
+
+			<Button
+			    android:id="@+id/btnSend"
+			    android:layout_width="wrap_content"
+			    android:layout_height="40dp"
+			    android:layout_margin="4dp"
+			    android:layout_weight="1"
+			    android:background="@color/bg_gray"
+			    android:text="@string/Send" />
+
+		</LinearLayout>
+
+        </RelativeLayout>
+</FrameLayout>

@@ -1,0 +1,491 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.longhuapuxin.u5">
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.SYSTEM_OVERLAY_WINDOW" />
+    <!-- SDK2.1新增获取用户位置信息 -->
+    <!-- 这个权限用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!-- 这个权限用于访问GPS定位 -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- 用于访问wifi网络信息，wifi信息会用于进行网络定位 -->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!-- 这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位 -->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_DOWNLOAD_MANAGER" />
+    <uses-permission android:name="android.permission.DOWNLOAD_WITHOUT_NOTIFICATION" />
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+    <!-- 打电话 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.NFC" />
+
+    <uses-feature android:name="android.hardware.nfc.hce" />
+
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="org.simalliance.openmobileapi.SMARTCARD" />
+
+    <application
+        android:name=".U5Application"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".WelcomeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CopyOfWelcomeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".RegisterActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BindPhoneNumberActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ChatActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BlankActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SearchActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".NewsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".DiscountAndPayActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.tencent.connect.common.AssistActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name="com.tencent.tauth.AuthActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="tencent1104865550" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ImageAmplificationActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GoPayActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EvaluateActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LabelListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LabelDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShopListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShopDetailActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CommentActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CitiesActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AboutUsActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PaymentActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OrderActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".OrderCompleteActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MyProfileActiviy"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EditLabelActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+        <activity
+            android:name=".DiscountCouponActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BillActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BuyBeanActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SuggestionActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PasswordActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AgreementActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GalleryActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FindFromaddressActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!--&lt;!&ndash; push service start &ndash;&gt;-->
+        <!--&lt;!&ndash; 用于接收系统消息以保证PushService正常运行 &ndash;&gt;-->
+        <!--<receiver-->
+            <!--android:name="com.baidu.android.pushservice.PushServiceReceiver"-->
+            <!--android:process=":bdservice_v1">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.BOOT_COMPLETED" />-->
+                <!--<action android:name="android.net.conn.CONNECTIVITY_CHANGE" />-->
+                <!--<action android:name="com.baidu.android.pushservice.action.notification.SHOW" />-->
+                <!--<action android:name="com.baidu.android.pushservice.action.media.CLICK" />-->
+                <!--&lt;!&ndash; 以下四项为可选的action声明，可大大提高service存活率和消息到达速度 &ndash;&gt;-->
+                <!--<action android:name="android.intent.action.MEDIA_MOUNTED" />-->
+                <!--<action android:name="android.intent.action.USER_PRESENT" />-->
+                <!--<action android:name="android.intent.action.ACTION_POWER_CONNECTED" />-->
+                <!--<action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <!--&lt;!&ndash; Push服务接收客户端发送的各种请求 &ndash;&gt;-->
+        <!--<receiver-->
+            <!--android:name="com.baidu.android.pushservice.RegistrationReceiver"-->
+            <!--android:process=":bdservice_v1">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.baidu.android.pushservice.action.METHOD" />-->
+                <!--<action android:name="com.baidu.android.pushservice.action.BIND_SYNC" />-->
+            <!--</intent-filter>-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.PACKAGE_REMOVED" />-->
+
+                <!--<data android:scheme="package" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+
+        <!--<service-->
+            <!--android:name="com.baidu.android.pushservice.PushService"-->
+            <!--android:exported="true"-->
+            <!--android:process=":bdservice_v1">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="com.baidu.android.pushservice.action.PUSH_SERVICE" />-->
+            <!--</intent-filter>-->
+        <!--</service>-->
+        <!-- 4.4版本新增的CommandService声明，提升小米和魅族手机上的实际推送到达率 -->
+        <!--<service-->
+            <!--android:name="com.baidu.android.pushservice.CommandService"-->
+            <!--android:exported="true" />-->
+
+        <service
+            android:name="com.longhuapuxin.service.IMService"
+            android:exported="false" />
+        <!-- push结束 -->
+        <!--<service-->
+            <!--android:name="com.baidu.location.f"-->
+            <!--android:enabled="true"-->
+            <!--android:process=":remote" />-->
+
+        <!--<receiver android:name="com.longhuapuxin.reciever.BaiDuPushReciever">-->
+            <!--<intent-filter>-->
+
+                <!--&lt;!&ndash; 接收push消息 &ndash;&gt;-->
+                <!--<action android:name="com.baidu.android.pushservice.action.MESSAGE" />-->
+                <!--&lt;!&ndash; 接收bind、setTags等method的返回结果 &ndash;&gt;-->
+                <!--<action android:name="com.baidu.android.pushservice.action.RECEIVE" />-->
+                <!--&lt;!&ndash; 接收通知点击事件，和通知自定义内容 &ndash;&gt;-->
+                <!--<action android:name="com.baidu.android.pushservice.action.notification.CLICK" />-->
+            <!--</intent-filter>-->
+        <!--</receiver>-->
+        <receiver android:name="com.longhuapuxin.reciever.IMReceiver">
+            <intent-filter>
+                <action android:name="com.longhuapuxin.updateSessiondb" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name="com.longhuapuxin.reciever.IMReceiverForAppointment">
+            <intent-filter>
+                <action android:name="com.longhuapuxin.shopAppointment" />
+            </intent-filter>
+        </receiver>
+
+        <!-- alipay sdk begin -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden" />
+
+        <!-- alipay sdk end -->
+        <meta-data
+            android:name="api_key"
+            android:value="yEvekElDInuVbpseSB4he743" />
+
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true"
+            android:label="WXEntryActivity"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".ChoicePhotoActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SetServiceUrlActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SecurityActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".LoginAccountSettingActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PhoneNumberOldSettingActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PhoneNumberNewSettingActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".GetPasswordActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FeelingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".NewFeelingActivity"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="YLGSBgCp48yC4YNSGLUeVYYo" />
+
+        <activity
+            android:name=".TransactionSendActivity"
+            android:label="@string/title_activity_transction" />
+        <activity
+            android:name=".TransactionReceiverActivity"
+            android:label="@string/title_activity_transaction_receiver" />
+        <activity
+            android:name=".ClipActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShowAlbumActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShowImgFileActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MyBillListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.longhuapuxin.uppay.UpPayBaseActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShowItemPhotoActivity"
+            android:screenOrientation="portrait" />
+        <activity android:name=".AgreeTransactionActivity" />
+        <activity android:name=".AboutU5Activity" />
+        <activity android:name=".AppointmentActivity" />
+        <activity android:name=".SetAddressActivity" />
+        <activity
+            android:name=".MyAddressActivity"
+            android:launchMode="singleTask" />
+        <activity android:name=".NewAddressActivity" />
+        <activity
+            android:name=".U5DialogActivity"
+            android:launchMode="singleTask"
+            android:theme="@style/U5DialogStyle" />
+        <activity
+            android:name=".PhotoSelectorActivity"
+            android:theme="@style/U5DialogStyle" />
+        <activity
+            android:name=".BookProductDialogActivity"
+            android:theme="@style/U5DialogStyle"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".ProductListActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".MyWalletActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WithdrewActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BindBankActivity"
+            android:launchMode="singleTask"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".BindResultActivity"
+            android:launchMode="singleTask"
+
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ChargeActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MySubscriptionActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.longhuapuxin.senabimage.ImagePagerActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".MipcaCaptureActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ActivityShopRedPackage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CommentsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShopCommentsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShowCommentsActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ConfirmMoneyActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FirstUsedActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ReleaseSkillProtocol"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CreateGroupActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.longhuapuxin.u5.SelectContactsActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.longhuapuxin.u5.GroupDetailActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.longhuapuxin.u5.EditGroupActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.longhuapuxin.u5.CreateEnvelopeActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.longhuapuxin.u5.MyEnvelopeActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.longhuapuxin.u5.IdentifyBankCardDialogActivity"
+            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name="com.longhuapuxin.u5.MapActivity"
+            android:screenOrientation="portrait"></activity>
+        <!-- uppay sdk start -->
+        <uses-library
+            android:name="org.simalliance.openmobileapi"
+            android:required="false" />
+
+        <activity
+            android:name="com.unionpay.uppay.PayActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="com.unionpay.UPPayWapActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
+
+        <!-- uppay sdk end -->
+    </application>
+
+</manifest>

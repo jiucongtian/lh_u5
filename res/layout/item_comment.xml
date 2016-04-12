@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp">
+
+        <TextView
+            style="@style/normal_deep_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="小太阳"
+            android:id="@+id/nameTv"
+            android:layout_centerVertical="true" />
+
+        <RatingBar
+            android:id="@+id/summaryRb"
+            style="@style/RatingStarSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stepSize="0.5"
+            android:numStars="5"
+            android:layout_toRightOf="@+id/nameTv"
+            android:layout_marginLeft="3dp"
+            android:isIndicator="true"
+            android:layout_centerVertical="true" />
+
+        <TextView
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2010.10.09"
+            android:id="@+id/dateTv"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true" />
+    </RelativeLayout>
+
+    <TextView
+        style="@style/normal_deep_gray"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:text="服务好"
+        android:id="@+id/noteTv"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="5dp" />
+
+    <LinearLayout
+        android:id="@+id/serviceContainer"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            style="@style/small_light_gray"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="服务态度" />
+        <RatingBar
+            android:id="@+id/serviceRb"
+            style="@style/RatingStarSmall"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stepSize="0.5"
+            android:numStars="5"
+            android:isIndicator="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            style="@style/small_light_gray"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="价      格" />
+        <RatingBar
+            android:id="@+id/priceRb"
+            style="@style/RatingStarSmall"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stepSize="0.5"
+            android:numStars="5"
+            android:isIndicator="true"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/professionContainer"
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/serviceContainer"
+        android:layout_marginLeft="5dp">
+
+        <TextView
+            style="@style/small_light_gray"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="技能水平" />
+        <RatingBar
+            android:id="@+id/skillRb"
+            style="@style/RatingStarSmall"
+            android:layout_gravity="center_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:stepSize="0.5"
+            android:numStars="5"
+            android:isIndicator="true"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:id="@+id/imageView"
+        android:background="@color/bg_gray" />
+
+
+</LinearLayout>

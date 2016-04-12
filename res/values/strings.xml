@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">U5</string>
+    <string name="serverurl">http://longhua/niwo.apk</string>
+    <string name="title_activity_register">RegisterActivity</string>
+    <string name="title_activity_find_password">FindPasswordActivity</string>
+    <string name="title_activity_bind_qq">BindQQActivity</string>
+    <string name="title_activity_chat">ChatActivity</string>
+    <string name="title_activity_search_shop">SearchShopActivity</string>
+    <string name="title_activity_label_list">LabelListActivity</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="soft_update_no">已经是最新版本</string>
+    <string name="soft_update_title">软件更新</string>
+    <string name="soft_update_info">检测到新版本，立即更新吗</string>
+    <string name="soft_update_updatebtn">更新</string>
+    <string name="soft_update_later">稍后更新</string>
+    <string name="soft_updating">正在更新</string>
+    <string name="soft_update_cancel">取消</string>
+    <string name="shop_pay">付款</string>
+    <string name="shop_recommend">热门推荐</string>
+    <string name="shop_search">搜索</string>
+    <string name="label_title">标签</string>
+    <string name="title_activity_blank">BlankActivity</string>
+    <string name="title_activity_news">NewsActivity</string>
+    <string name="label_prompt">点击换一换会有不同的收获</string>
+    <string name="label_name1">NO1标签</string>
+    <string name="label_name2">暂未开通</string>
+    <string name="label_name3">暂未开通</string>
+    <string name="title_activity_discount_and_pay">DiscountAndPayActivity</string>
+    <string name="title_activity_login_other_qq">LoginOtherQQActivity</string>
+    <string name="qq_login">登录</string>
+    <string name="qq_logout">退出当前账号</string>
+    <string name="title_activity_image_amplification">ImageAmplificationActivity</string>
+    <string name="profile_my_labels">我的标签管理</string>
+    <string name="profile_my_trade">我的交易</string>
+    <string name="profile_my_bean">我的U豆</string>
+    <string name="profile_my_discount">我的折扣卷</string>
+    <string name="profile_active_center">活动中心</string>
+    <string name="profile_about_us">关于我们</string>
+    <string name="profile_help">帮助反馈</string>
+    <string name="profile_pwd">密码</string>
+    <string name="profile_pwd_set">设置密码</string>
+    <string name="profile_pwd_change">修改密码</string>
+    <string name="profile_setting">设置</string>
+    <string name="profile_exit">退出</string>
+    <string name="title_activity_go_pay">GoPayActivity</string>
+    <string name="title_activity_evaluate">EvaluateActivity</string>
+    <string name="title_my_label">我的标签</string>
+    <string name="title_edit_label">修改标签</string>
+    <string name="title_their_detail">他的详情</string>
+    <string name="title_label_detail">%1$s的标签</string>
+    <string name="title_shops">商家</string>
+    <string name="title_comment">评价</string>
+    <string name="title_about_us">关于我们</string>
+    <string name="shop_list_tab_1">全国</string>
+    <string name="shop_list_tab_2">本市</string>
+    <string name="shop_list_tab_3">10KM</string>
+    <string name="search_type_1">全国</string>
+    <string name="search_type_2">本市</string>
+    <string name="search_type_3">10KM</string>
+    <string name="label_detail_header_btn">关注</string>
+    <string name="label_detail_header_btn_cared">已关注</string>
+    <string name="title_current_city">当前城市</string>
+    <string name="title_activity_contacts">ContactsActivity</string>
+    <string name="Connecting">正在连接服务器</string>
+    <string name="Refresh">刷新</string>
+    <string name="profile_my_payment">我的消费</string>
+    <string name="ActiveOrder">未完成交易</string>
+    <string name="Payment">付款</string>
+    <string name="CompletedOrder">已完成交易</string>
+    <string name="profile_my_order">我的交易</string>
+    <string name="title_activity_transction">TransctionActivity</string>
+    <string name="title_activity_transaction_receiver">TransactionReceiverActivity</string>
+    <string name="Target">对方：</string>
+    <string name="OrderContent">交易内容</string>
+    <string name="CompleteOrder">完成交易</string>
+    <string name="profile">个人信息</string>
+    <string name="AboutUs">关于我们</string>
+    <string name="Good">好评</string>
+    <string name="JustSoso">中评</string>
+    <string name="Bad">差评</string>
+    <string name="Confirm">确认</string>
+    <string name="Cancel">取消</string>
+    <string name="Portrait">头像</string>
+    <string name="Rich_AboutUs">&lt;big>名称：&lt;/big>U5（有我）</string>
+    <string name="Set">设置</string>
+    <string name="shop_list_diatance">%1$sKM</string>
+    <string name="InUse">点击使用</string>
+    <string name="CouponTitle">名　　称</string>
+    <string name="CouponDescript">说　　明</string>
+    <string name="CouponseDiscount">折扣</string>
+    <string name="Percent">%</string>
+    <string name="Description">说明</string>
+    <string name="ActiveDate">生效日期</string>
+    <string name="DueTo">截止日期</string>
+    <string name="PublishDate">发布日期</string>
+    <string name="Note">说明</string>
+    <string name="Code">编码</string>
+    <string name="Balance">总额</string>
+    <string name="BuyBean">购买</string>
+    <string name="Buy">购买</string>
+    <string name="Send">发送</string>
+    <string name="ShopName">商家名称</string>
+    <string name="GenderNotSure">未知</string>
+    <string name="GenderMale">男</string>
+    <string name="GenderFemale">女</string>
+    <string name="prompt_verify">输入手机号获取验证码</string>
+    <string name="about_us_current_version">U5当前版本：%1$s</string>
+    <string name="head">这里是HeadView</string>
+    <string name="pull_to_refresh">下拉刷新</string>
+    <string name="release_to_refresh">释放立即刷新</string>
+    <string name="refreshing">正在刷新...</string>
+    <string name="refresh_succeed">刷新成功</string>
+    <string name="refresh_fail">刷新失败</string>
+    <string name="pullup_to_load">上拉加载更多</string>
+    <string name="release_to_load">释放立即加载</string>
+    <string name="loading">正在加载...</string>
+    <string name="load_succeed">加载成功</string>
+    <string name="load_fail">加载失败</string>
+    <string name="feeling">动态</string>
+    <string name="newFeeling">发表动态</string>
+    <string name="appointment">我的预约</string>
+    <string name="add">增加</string>
+    <string name="agreementContent">
+<![CDATA[
+        <p>U5使用协议</p>
+
+<p>一、总则</p>
+
+<p>1.1、 用户在使用U5服务前，应当仔细阅读《U5使用协议》（以下简称“本协议”）的全部内容，对于本协议中的加重字体、斜体、下划线、颜色标记等条款需重点阅读、理解。</p>
+
+<p>1.2、 用户应当同意本协议的全部条款并按照页面上的提示完成全部的注册程序。用户在进行注册程序过程中点击"注册"按钮即表示用户与U5达成以下协议，完全接受本协议项下的全部条款，本协议即在用户与U5之间产生法律效力，对双方均具有法律约束力。</p>
+
+<p>1.3、 用户注册成功后，U5将给予每个用户一个用户帐号及相应的密码，该用户帐号和密码由用户负责保管；用户应当对以其用户帐号进行的所有活动和事件负法律责任。</p>
+
+<p>1.4、 U5用户协议、各个频道单项服务条款、全部活动条款及公告可由U5随时更新，且无需另行通知。U5有权对上述条款进行修改，修改后的协议一旦公布即有效替代原有协议。用户可随时查询最新协议。用户在使用U5提供的各项服务之前，应仔细阅读本协议及本协议不可分割的各项服务协议。用户在使用相关服务时,应关注并遵守其所适用的相关条款。用户如不同意本服务协议及/或随时对其的修改，可以主动取消U5提供的服务；用户一旦使用U5服务，即视为用户已了解并完全同意本协议及其他服务条款中的各项内容，包括U5对本协议及其他服务条款随时所做的任何修改，并成为U5用户。</p>
+
+<p>二、用户资格及注册</p>
+
+<p>2.1、 用户应为具有完全民事权利能力和民事行为能力的自然人、法人，或是能够独立承担民事责任能力的其他组织。用户若不具有前述规定的法律能力资格，须经法定代理人同意或由法定代理人代理，或是得到有权主体授权后进行注册、交易。</p>
+
+<p>2.2、 用户使用U5提供的网络平台服务前，应自行准备如下设备并承担如下开支：</p>
+
+<p>2.2.1、 自行配备上网的所需设备，包括手机、调制解调器或其他必备上网装置。</p>
+
+<p>2.2.2、 自行负担个人上网所支付的与此服务有关的电话费用、网络费用等。</p>
+
+<p>2.3、用户“同意并遵守U5使用协议”，则视为用户同意本协议的所有条款，且具有浏览U5平台相关信息、提交订单、发表评价等使用U5提供的全部服务的权利能力和行为能力，同意承担由此带来的全部法律责任。</p>
+
+<p>2.4、 用户注册、使用U5不得出于非法或破坏U5交易秩序的目的，用户保证向U5提交的全部信息真实、准确和完整，不存在盗用、借用、买入非本人手机号码、电子邮箱进行注册、虚假交易和作弊交易的行为，用户若存在上述违规行为，U5有权处理用户帐号。</p>
+
+<p>2.5、用户注册成功后，应妥善保管其U5平台帐户及密码，定期或不定期修改密码，在每次使用U5服务完毕后及时退出帐户，以确保帐户安全。用户不得将U5平台帐户出借、转让或用作其他非法用途，否则因帐户未妥善保管而造成损失的，用户应承担相应法律责任，除非有证据证明该行为与用户无关。若用户因U5平台帐户被盗或因其他非用户原因造成损失的，用户应立即通知U5并向公安机关报案。</p>
+
+<p>三、用户信息保护</p>
+
+<p>3.1、 U5仅在用户注册、提交订单或使用U5手机客户端时，基于用户帐户安全、发放U5券、定位或配送用户订购、查询的商品或服务等需要，收集用户的手机号、电子邮箱、收货地址、当前位置等必要的个人信息，除此之外，U5不会收集任何用户信息。用户同意U5基于上述目的及范围收集信息。</p>
+
+<p>3.2、 U5对收集的用户信息中涉及识别用户个人身份和用户个人隐私的信息进行保护，承诺在未获得用户许可的情况下，不会将用户的上述信息对外公开或提供给任何第三方，但以下情况除外：</p>
+
+<p>3.2.1、 用户同意让第三方共享资料。</p>
+
+<p>3.2.2、 用户同意公开其个人资料，享受为其提供的产品和服务。</p>
+
+<p>3.2.3、 根据法律法规的规定，或行政机关的要求，向行政机关、司法机关或其他法律规定的第三方披露。</p>
+
+<p>3.2.4、 为了商品配送或其他为用户利益需要而向交易以外第三方提供的，例如物流配送商、用户同意的商品或服务提供商等。</p>
+
+<p>3.3、 基于保护用户个人隐私的需要，U5制定了单独的隐私声明（详见U5隐私声明），U5将按照公示的隐私声明对用户隐私信息进行保护。</p>
+
+<p>四、U5服务</p>
+
+<p>4.1、 用户可根据本协议及U5公布的相关使用规则，查阅在U5平台上发布的服务产品信息，通过U5平台订购具体服务产品，发布产品评价信息，邀请关注好友，参加U5不定期组织的有关活动，及U5现有及将来可能提供的其他服务。</p>
+
+<p>4.2、 用户在使用U5提供的上述服务时，应遵守本协议及U5的相关使用规则，遵守自愿、平等、公平及诚实信用原则，不利用U5平台侵犯他人合法权益及谋取不正当利益，不扰乱网上交易的正常秩序。</p>
+
+<p>4.3、 用户可以在U5平台发布对服务的购买体验、评价等信息，并可对其进行适当的修改、删除，但不得在U5平台发布包含以下内容的言论：</p>
+
+<p>4.3.1、 反对宪法所确定的基本原则，煽动、抗拒、破坏宪法和法律、行政法规实施的。</p>
+
+<p>4.3.2、 煽动颠覆国家政权，推翻社会主义制度，煽动、分裂国家，破坏国家统一的。</p>
+
+<p>4.3.3、 损害国家荣誉和利益的。</p>
+
+<p>4.3.4、 煽动民族仇恨、民族歧视，破坏民族团结的。</p>
+
+<p>4.3.5、 任何包含对种族、性别、宗教、地域内容等歧视的。</p>
+
+<p>4.3.6、 捏造或者歪曲事实，散布谣言，扰乱社会秩序的。</p>
+
+<p>4.3.7、 宣扬封建迷信、邪教、淫秽、色情、赌博、暴力、凶杀、恐怖、教唆犯罪的。</p>
+
+<p>4.3.8、 公然侮辱他人或者捏造事实诽谤他人的，或者进行其他恶意攻击的。</p>
+
+<p>4.3.9、 损害国家机关信誉的。</p>
+
+<p>4.3.10、 其他违反宪法和法律行政法规的。 用户在U5平台发布的信息，均代表用户的观点，与U5无关，用户须对其言论独立承担完全的法律责任。</p>
+
+<p>4.4、 用户在使用U5提供的服务时，不得有下列行为：</p>
+
+<p>4.4.1、 利用U5平台从事洗钱、窃取商业秘密、窃取个人信息等违法犯罪活动。</p>
+
+<p>4.4.2、 将有关干扰、破坏或限制任何计算机软件、硬件或通讯设备功能的软件病毒或其他</p>
+
+<p>4.4.3、 干扰U5平台正常运行，非法入侵U5服务器、篡改U5代码或其他损害U5系统的行为。</p>
+
+<p>4.4.4、 企图规避U5平台的安全设置或网络系统，包括获取用户不应获取的数据，登录未经明确授权的服务器或帐户，或采用运行端口扫描等方式窥探其他网络的安全措施。</p>
+
+<p>4.4.5、 以导致U5的计算机系统或设施承受不合理负载的方式获取U5提供的服务或网站信息，或进行可能导致此类情况出现的行为。</p>
+
+<p>4.4.6、 实施任何形式的网络监控，从而截取与自身无关的信息。</p>
+
+<p>4.4.7、 利用U5平台从事与网上购物无关或不是以购物为目的的活动，试图扰乱正常购物秩序，谋取不正当利益的行为。</p>
+
+<p>4.4.8、 注册多个帐户，通过自我邀请、相互邀请或利用多个手机或邮箱注册等不正当手段获取返利、抵用券或任何经济利益。</p>
+
+<p>4.4.9、 大量购买商品或服务后又大量退货或囤积牟利，损害商户或U5利益的行为。</p>
+
+<p>4.4.10、 其他损害他人或U5合法权益的行为。</p>
+
+<p>4.5、 一经发现用户提供虚假信息或有上述禁止的言论或行为的，U5有权采取暂停提供服务、删除违法违规信息、限制用户购买、禁止用户发言、锁定用户帐户等处理措施。若因用户的上述言论或行为给他人或U5造成损失的，用户还应承担赔偿责任。</p>
+
+<p>4.6、 若国家相关机关向U5发出命令、指示、裁决等法律文书或第三人向U5投诉并提供相关证据材料，要求冻结、关闭用户帐号及交易的，U5有权对相关帐号及交易进行冻结或取消，同时对违反本协议及U5相关服务规则的用户，U5有权封停其帐号。U5采取上述措施的，将通过用户注册时提交的联系信息通知用户。</p>
+
+<p>4.7、 用户应遵守本协议及U5公示的各项服务规则的内容，若因用户违反本协议及服务规则造成损失的，用户应予以赔偿。</p>
+
+<p>五、服务条款的修改</p>
+
+<p>U5有权不定期的制定、修改本协议及/或相关服务规则。</p>
+
+<p>六、服务的中断和终止</p>
+
+<p>6.1、 U5会尽全力维护平台的正常运行，以向用户提供持续、稳定、安全、顺畅的服务。但用户理解并同意：U5对服务页面进行改版、升级APP系统、增加服务功能等须中断服务的操作时，有权暂时中断服务。U5将尽可能在实施以上行为时予以提前公告，并尽可能将影响降低到最小。</p>
+
+<p>6.2、 用户可自行停止使用U5提供的服务，并可向U5提交申请，要求封停或注销其帐户。用户帐户被封停或注销后，用户将不能使用U5平台除浏览页面外的所有服务，但U5仍有权保留用户的所有注册信息及过往交易记录，对用户在U5平台从事违法行为或违反本协议及相关规定的行为，U5仍有权行使本协议规定的权利并追究用户的法律责任。</p>
+
+<p>6.3、 U5可在下列情况下，自行停止向用户提供服务，并封停或注销其帐户，若因用户行为给U5造成损失的，用户还应负责赔偿：</p>
+
+<p>6.3.1、 用户违反本协议相关规定的，不论用户是否直接、间接或者通过他人再次注册成为U5用户，U5均有权停止向其提供服务。</p>
+
+<p>6.3.2、 每个用户仅可在U5注册一个帐户，若用户注册多个帐户或使用关联帐户购买有购买限制的产品或谋取不正当利益的，U5有权取消交易并停止向该用户提供服务，用户因此获取的利益须退还。</p>
+
+<p>6.3.3、 用户使用虚假信息注册的，包括但不限于使用虚假姓名、虚假地址、虚假手机号、虚假电子邮箱等，U5均有权立即停止向其提供服务。</p>
+
+<p>6.3.4、 本协议终止或更新时，用户明示不同意接受新协议的。</p>
+
+<p>6.3.5、 其他违反U5相关规定或致使U5或他人遭受利益损害的行为。、</p>
+
+<p>七、责任限制</p>
+
+<p>7.1、 不论在任何情况下，U5对由于互联网正常的设备维护，互联网络连接故障，电脑、通讯或其他系统的故障，电力故障，罢工，暴乱，骚乱，灾难性天气（如火灾、洪水、风暴等），爆炸，战争，政府行为，司法行政机关的命令或第三方的不作为而造成的不能履行或延迟履行服务不承担责任。</p>
+
+<p>7.2、如因上述不可抗力或其他U5无法控制的原因使U5平台的销售系统崩溃或无法正常使用导致网上交易无法完成或丢失有关的信息、记录等，U5不承担责任。但U5会在最大限度内尽可能合理地协助处理善后事宜，并努力使客户免受经济损失及其他损失。</p>
+
+<p>7.3、 基于互联网的特殊性，U5平台显示的信息可能有一定的滞后性或差错，对此情形用户应知悉并理解；用户须自行辨别真伪，谨慎预防风险。</p>
+
+<p>八、知识产权</p>
+
+<p>8.1、 用户同意，用户在U5平台发表的产品使用体验、产品讨论或图片等所有信息（以下简称“信息”），除署名权、发表权、修改权外的其他知识产权权利（包括但不限于：复制权、发行权、出租权、展览权、表演权、放映权、广播权、信息网络传播权、摄制权、改编权、翻译权、汇编权以及应当由著作权人享有的其他可转让权利），均独家排他无偿许可给U5，并同意U5以自己名义就所述权利的保护采取任何形式的法律行为，并获得全部赔偿。 本协议已经构成《著作权法》第二十五条所规定的书面协议，其效力及于用户在U5平台发布的任何受著作权法保护的作品内容，无论该内容形成于本协议签订前还是本协议签订后。</p>
+
+<p>8.2、 U5及U5许可的关联方有权将用户在U5平台发表的产品使用体验、产品讨论或图片进行使用或者与其他人合作使用，使用范围包括但不限于网站、电子杂志、杂志、刊物等。</p>
+
+<p>九、通知和公告</p>
+
+<p>9.1、 U5向用户发送的所有通知和公告，将通过页面公告或应用推送或手机短信的方式传送。U5的活动信息也将定期通过页面公告及应用推送或手机短信方式向用户发送。</p>
+
+<p>十、法律管辖和适用</p>
+
+<p>10.1、 本协议的订立、执行和解释及争议的解决均应适用中华人民共和国大陆地区法律。</p>
+
+<p>10.2、 如发生本协议条款与上述法律相抵触时，则这些条款将完全按上述法律规定重新解释，但不影响其它合法条款对用户产生的法律效力和影响。</p>
+
+<p>10.3、 本协议的规定是可分割的，如本协议任何规定被裁定为无效或不可执行，则该规定可被删除，不影响其余条款的继续执行。</p>
+
+<p>10.4、 如双方就本协议内容或其执行发生任何争议，双方应尽力友好协商解决；协商不成时，任何一方均可向U5所在地人民法院提起诉讼。</p>
+
+<p>十一、其他</p>
+
+<p>11.1、U5郑重提醒用户注意本协议中免除U5责任和限制用户权利的条款，请用户仔细阅读，自主考虑风险。未成年人应在法定监护人的陪同下阅读本协议。</p>
+
+<p>11.2、本协议的效力、解释及纠纷的解决，适用于中华人民共和国法律。若用户和U5之间发生任何纠纷或争议，首先应友好协商解决，协商不成的，用户同意将纠纷或争议提交U5住所地有管辖权的人民法院管辖。</p>
+
+<p>11.3、本协议的任何条款无论因何种原因无效或不具可执行性，其余条款仍有效，对双方具有约束力。</p>
+        
+        ]]>
+    </string>
+
+    <string name="ReleasePolicy">
+        <![CDATA[
+<body>
+  <div>
+    <h1 align="center">U5技能发布及管理规范</h1>
+
+    <h2>概述</h2>
+
+    <p>一、为了给广大U5APP用户创造一个良好的创业环境，维护U5正常的经营秩序，特制定本规范。</p>
+
+    <p>二、U5服务发布及管理规范，是对U5用户增加基本义务或限制基本权利的条款。U5有权对用户的行为进行单方认定，并基于该事实，严格依据本条款的规范对违规行为进行相应处理。U5用户在适用本规范上一律平等。</p>
+
+    <p>三、用户应该遵守国家法律、行政法规、部门规章等规范性文件。对任何涉嫌违反国家法律、行政法规、部门规章等规范性文件的行为，本规范已经有规范的，适用本规范；本规范尚未规范的，U5有权酌情处理。但是U5对用户的处理不排除其应尽的法律责任。</p>
+
+    <p>四、U5有权随时变更本规范并在U5APP予以公告。</p>
+
+    <h2>名词解释</h2>
+
+    <p>一、U5U5包括基于互联网的网站（域名：www.longhuapuxin.com）及移动互联网向用户提供的相关应用、服务等。</p>
+
+    <p>二、用户指完成U5注册程序，获得可以登录U5会员系统权限的正式注册会员。U5用户可以是双重身份，既可以是服务者提供服务，也可以是顾客购买服务。</p>
+
+    <p>三、账户余额指顾客购买服务者的服务时按约定的价格支付给服务者的费用。</p>
+
+    <p>四、U5用户通过赠送、市场推广或其他活动向用户提供的可用来抵扣部分服务费的积分，只能消费抵现，不能提现。</p>
+
+    <p>五、个人主页指U5为用户提供的综合信息展示页面，内容包括：用户为了展示自我、与人交流、售卖服务为目的而发布的个人信息、服务等。</p>
+
+    <p>六、作品秀指用户发布的以服务为前提，以作品展示为核心内容的图片的集合。</p>
+
+    <p>七、拒单指服务者无法提供能顾客要求的服务，做出的拒绝接单的行为，U5上表现为服务者点击订单中的“拒单”按钮。</p>
+
+    <p>八、系统确认服务完成</p>
+
+    <p>九、邮寄类服务，系统将在发货之日起的7天内自动确认服务完成。</p>
+
+    <p>十、非邮寄类服务，系统将在用户下单设置的预约之日起的3天内自动确认服务完成。</p>
+
+    <p>注册及管理规范</p>
+
+    <h3>注册</h3>
+
+    <p>（一）注册U5首先必须使用常用手机号注册成为U5会员，其填写的任何信息应遵守国家法规，不得包含违法、涉嫌侵犯他人权利或干扰空格正常运营秩序相关信息。</p>
+
+    <p>（二）用户成功取得U5账号后，有义务妥善保管并正确使用，只拥有使用权，不能进行买卖交易。因未尽上述义务导致账号信息泄露、账号被盗等情况所引起的经济纠纷或损失由用户自行承担。</p>
+
+    <p>（三）U5不认可用户之间私下通过旺旺、QQ、微信等方式私下达成的所有约定，若出现用户纠纷，U5以《U5规范》为依据处理，用户自行承担所有因私下承诺造成的所有后果。</p>
+
+    <h3>管理</h3>
+
+    <p>U5将对用户发布的个人技能自定义信息、服务所属类目、合法性、标题、文字描述、图片、资质、点评、留言、服务质量等进行严格检查。发现不符合《U5发服务发布及管理规范》的，U5有权对其进行禁言、屏蔽、冻结账号等处理。</p>
+
+    <h2>内容发布管理规范及违规处理措施</h2>
+
+    <h3>禁止发布的技能和服务</h3>
+
+    <p>一、反动等破坏性信息类，含有反动、破坏国家统一、破坏主权及领土完整、破坏社会稳定，涉及国家机密、扰乱社会秩序，宣扬邪教迷信，宣扬宗教、种族歧视等信息，或法律法规禁止出版发行的书籍、音像制品、视频、文件资料。</p>
+
+    <p>二、枪支、弹药、军火及其仿制品/相关器材/配件/附属产品、危险武器类、管制刀具等可能用于危害他人人身安全的器具；</p>
+
+    <p>三、易燃、易爆物品或制作易燃易爆品的相关化学物品及相关制作教程、书籍等；</p>
+
+    <p>四、毒品类商品、致瘾性药物及制毒原料、有毒化学品等；</p>
+
+    <p>五、博彩信息及赌具，如吃角子老虎机，透视麻将，透视扑克等；</p>
+
+    <p>六、未经允许违反国家行政法规或不适合交易的商品类，包括伪造变造的货币以及印制设备、正在流通的人民币、文物、烟草专卖品及烟草专用机械等；</p>
+
+    <p>七、色情低俗商品、图片或信息、色情陪聊服务软件、账号及邀请码等；</p>
+
+    <p>八、做法事、人骨法器等违背公序良俗的宗教、封建迷信类商品及服务；</p>
+
+    <p>九、涉及人身安全或隐私类的软件设备、服务或信息等；</p>
+
+    <p>十、药品、医疗器械类商品。</p>
+
+    <p>十一、动植物、动植物器官及动物捕杀工具类，包括人体器官、遗体等。</p>
+
+    <p>十二、未经国家备案的网络游戏、游戏点卡、货币等相关服务类、游戏外挂、私服相关的网游类商品或服务。</p>
+
+    <p>十三、虚拟类q币、比特币、莱特币等互联网虚拟币以及相关商品、话费充值服务等。</p>
+
+    <p>十四、任何侵犯他人知识产权的物品或服务，如假冒商品，侵犯他人版权或者专利权的产品，非授权的电视游戏、音乐集、电影、电视节目或照片。</p>
+
+    <p>十五、根据法律、法规禁止销售或本网站认为依据公共风俗不应贩售的物品；</p>
+
+    <p>十六、卫星信号的地面收发装置；</p>
+
+    <p>十七、伪造变造的政府机构颁发的文件、证书、公章或仅限国家机关或特定机构方可提供的服务；</p>
+
+    <p>十八、尚可使用的发票、其它可用于报销的票据以及此类票据的代开服务；</p>
+
+    <p>十九、催情类商品；</p>
+
+    <p>二十、身份证及身份证验证设备；</p>
+
+    <p>二十一、尚可使用的证券、政府发放的消费劵及相应代购、推荐服务</p>
+
+    <p>二十二、军警制服、标志及军警专用制品</p>
+
+    <p>二十三、带有宗教、种族歧视的相关服务或信息；</p>
+
+    <p>二十四、特供、军需类商品</p>
+
+    <p>二十五、代写论文、代考试类相关服务</p>
+
+    <p>二十六、代扣驾照分数服务</p>
+
+    <p>二十七、炒作博客人气、炒作网站人气、代投票类服务</p>
+
+    <p>二十八、明示、暗示具有治疗、保健功效的食品</p>
+
+    <h3>禁止发布的服务信息</h3>
+
+    <p>一、非法信息：冒充他人、刻意隐瞒事实、欺诈等行为的信息；</p>
+
+    <p>二、不良信息：诸如传播网络赚钱、坐等收成、涉及非法传销、金字塔系统、多层市场推广以及“快速致富计划”等通过发展上下线的传销方式；</p>
+
+    <p>三、不正当竞争信息：使用涉嫌不正当竞争的描述或使用与他人进行比较的描述信息，如 “最低价“等；</p>
+
+    <p>四、个人信息如微信号、QQ号等；</p>
+
+    <p>五、虚假、夸大等描述信息：使用虚假、夸大、承诺性或无法判断真伪的描述信息；</p>
+
+    <p>六、广告信息，无服务实物或服务内容，如招代理、某网站或app宣传信息等；</p>
+
+    <p>七、无意义信息，包括标题或内容堆积关键词；标题、图片、描述之间没有任何关联，明显偏离主题的信息；主题不明或描述不清，可能会引起读者过多猜测的信息；</p>
+
+    <p>八、重复信息，同一用户在一个或多个城市发布大量相同性质的服务信息；</p>
+
+    <h3>禁止发布的违规留言、评价</h3>
+
+    <p>一、灌水类：相似内容反复发布，缺少实质体验的留言和评价；</p>
+
+    <p>二、跟风类：非亲身体验的、复制他人意见的留言和评价；</p>
+
+    <p>三、广告类：出于商业及个人利益的含有广告信息的留言和评价；</p>
+
+    <p>四、炒作类：出于明显商业炒作目的的留言和评价；</p>
+
+    <p>五、不当语言类：含有人身攻击、泄露他人隐私等不当内容的留言和评价；</p>
+
+    <p>六、违反国家法律法规的留言和评价；</p>
+
+    <h3>禁止发布的违规图片</h3>
+
+    <p align="left">非法图片。发布的图片内容违反法律、法规或道德，含有色情、暴力、恐怖、反动、人身攻击等内容；</p>
+
+    <p align="left">广告图片，发布的图片含有广告信息，涉及微信、QQ等等；</p>
+
+    <p align="left">无关图片，发布U5不开放类目服务等图片，或与所发布服务无关的图片；</p>
+
+    <p align="left">盗用图片，发布服务盗用别人的图片；</p>
+
+    <h3>其他</h3>
+
+    <p>U5不开放类目的服务：</p>
+
+    <p>一、提供的是以批发零售、代理贩卖商品等为主营模式的服务。</p>
+
+    <p>二、提供的是化妆品、护肤品、保健品、成人用品、计生用品、音像制品、果蔬、生鲜农副产品等类商品的非突出个人技能类的服务。</p>
+
+    <p>三、非个人服务者提供的服务。</p>
+
+    <p>四、用户每次交易，U5平台会抽取服务提供方<a name="_GoBack"></a>1%的单边交易手续费。</p>
+
+    <h3>违规处理措施</h3>
+
+    <p>一、根据用户发布信息的出发点，对U5用户体验、信息质量造成的伤害程度进行处罚，处罚包括删除、屏蔽、限制发布、冻结账户等。</p>
+
+    <p>二、对于屡次违反规范、主观上刻意违规行为，从重处罚。</p>
+
+    <p>三、U5保留行使向用户追究法律责任和经济赔偿的权利。</p>
+
+    <h2>用户行为管理规范及违规处理措施</h2>
+
+    <h3>违规行为认定</h3>
+
+    <h4>不当使用他人权利</h4>
+
+    <p>不当使用他人权利，是指用户发生以下任一行为：</p>
+
+    <p>1、用户在所发布的服务信息或所使用的店铺名等中不当使用他人商标权、著作权等权利的；</p>
+
+    <p>2、用户出售服务涉嫌不当使用他人商标权、著作权、专利权等权利的；</p>
+
+    <p>3、用户所发布的服务信息或所使用的其他信息造成消费者混淆、误认或造成不正当竞争的。</p>
+
+    <h4>虚假交易</h4>
+
+    <p>定义和认定：</p>
+
+    <p>1、技能服务者对所发布的服务注册多个账号进行虚假交易，抬高服务有效订单或交易量的行为；</p>
+
+    <p>2、服务者通过虚假价格或虚假交易，抬高服务分类排名的行为；</p>
+
+    <p>3、服务者通过偷换服务信息，达到继承销售记录和服务评论的行为；</p>
+
+    <p>4、服务者通过不正当方式提高在空格的服务销量或提高店铺评分（即&quot;炒作&quot;行为），妨害顾客购物权益的行为。这种 &quot;炒作&quot;的行为主要表现包括但不限于以下几种形式：自买自评、恶意更改价格、更换服务、第三方炒作、空包裹、与买家约定不发货等。虚假交易中通过不正当方式提高服务销量或提高服务评分的，U5有权删除该服务或删除相关的服务评分。</p>
+
+    <p>4、用户（包括服务者和顾客）通过非常规手段套取U5补贴费用的行为，包括但不限于非法手段邀请好友注册获得U豆奖励、通过非实际交易获取U豆支付的订单并提现等等。</p>
+
+    <h4>恶意差评</h4>
+
+    <p>恶意差评行为包括：</p>
+
+    <p>1、不合理要求：过双方聊天举证号，证明评价者以中差评要胁为前提，利用中差评谋取额外钱财或其它不当利益的评价。</p>
+
+    <p>2、胁迫：专业给中差评，且通过中差评获取额外钱财或不当利益给出的评价。</p>
+
+    <p>3、同行：与同行交易后给出的中、差评。</p>
+
+    <p>4、第三方诈骗：第三方诈骗所产生的评价。</p>
+
+    <p>5、泄露信息或辱骂：擅自将别人的信息公布在评语或解释中，在评语或解释中出现辱骂或污言秽语，损坏社会文明风貌等行为。</p>
+
+    <h4>不配合平台管理</h4>
+
+    <p>是指用户在日常运营中不配合平台管理的行为，包括但不限于骚扰、谩骂、恐吓平台工作人员，散播恶意攻击平台的消息等情形。对于不配合平台管理的用户，U5视情节严重程度采取管控措施，包括但不限于屏蔽、限制发布服务、公示警告、冻结账号等。</p>
+
+    <h4>违背承诺</h4>
+
+    <p>是指服务者未按照承诺向顾客提供以下服务，妨害顾客权益的行为，具体行为如下</p>
+
+    <p>1、拒绝按照顾客购买的价格成交或者拒绝提供承诺服务的；</p>
+
+    <p>2、服务者拒绝按照承诺给U5需求用户提供服务的</p>
+
+    <p>3、服务者未履行其它承诺的</p>
+
+    <h4>恶意骚扰</h4>
+
+    <p>指用户交易中或交易后采取恶劣手段骚扰对方，妨害他人合法权益的行为。</p>
+
+    <h4>泄露他人信息</h4>
+
+    <p>是指未经允许发布、传递他人隐私信息，涉嫌侵犯他人隐私权的行为。</p>
+
+    <h4>盗用他人账户</h4>
+
+    <p>指用户盗用他人U5账户，涉嫌侵犯他人相关信息、财产权的行为。</p>
+
+    <h4>骗取他人财物</h4>
+
+    <p>是指用户以非法获利为目的，非法获取他人财物，涉嫌侵犯他人财产权的行为。</p>
+
+    <p>违约</p>
+
+    <p>1、对于被媒体发布从而对空格产生不利社会影响的客户投诉或被工商局等相关部门受理的重大客户投诉，用户未按处理时效处理，如因此给U5造成损失的，用户应承担全部责任；</p>
+
+    <p>2、对于通过论坛、微博等途径传播对U5产生不利社会影响的客户投诉或被工商局等相关部门受理的一般客户投诉，用户未按处理时效处理，如因此给U5造成损失的，用户应承担全部责任。</p>
+
+    <h3>违规处理措施</h3>
+
+    <p>一、根据用户发布信息的出发点，对U5用户体验、信息质量造成的伤害程度进行处罚，处罚包括删除、屏蔽、限制发布、冻结账户等。</p>
+
+    <p>二、对于屡次违反规范、主观上刻意违规行为，从重处罚。</p>
+
+    <p>三、U5保留行使向用户追究法律责任和经济赔偿的权利。</p>
+
+    <h2>其他</h2>
+
+    <p>一、如果本规范中的任何条款因违反法律或政府规范或因其他原因而完全或部分无效，则该条款被视为删除。但该条款的删除不影响本规范其他条款的效力。</p>
+
+    <p>二、本规范条款U5享有最终解释权。</p>
+
+    <p>三、本规范于2015年12月31日正式生效。</p>
+  </div>
+</body>
+        ]]>
+    </string>
+
+
+
+
+
+    <string name="agreement">用户协议</string>
+    <string name="releaseSkillProtocol">U5技能发布及管理规范</string>
+    <string name="NewFeeling">发表动态</string>
+    <string name="Publish">发表</string>
+    <string name="SaySomething">说点什么吧</string>
+    <string name="ShopDetailPhotosCount">%1$s/%2$s</string>
+    <string name="ShopDetailDiscountNumber">本店有%1$s个折扣</string>
+    <string name="personalFeeling">个人动态</string>
+    <string name="shopFeeling">商家动态</string>
+    <string name="myFeeling">我的动态</string>
+    <string name="feelingAboutMe">关于我的</string>
+    <string name="notSure">未知</string>
+    <string name="noDescript">这家伙很懒，没有描述</string>
+    <string name="edit">编辑</string>
+    <string name="sineinname">登录帐号</string>
+    <string name="setSignInName">请设置登录帐号</string>
+    <string name="signpwd">登录密码</string>
+    <string name="beanpwd">密码</string>
+    <string name="setBeanPwd">请设置密码</string>
+    <string name="phone">手机号码</string>
+    <string name="securitysetting">安全设置</string>
+    <string name="enterSignName">请输入登录帐号</string>
+    <string name="setpassword">登录密码</string>
+    <string name="setpaypassword">支付密码</string>
+    <string name="albumAllPhoto">所有照片</string>
+    <string name="findPassword">找回登录密码</string>
+    <string name="findPasPassword">找回密码</string>
+    <string name="mySubscription">我的预约</string>
+    <string name="nextStep">下一步</string>
+    <string name="quitGroup">退出群</string>
+    <string name="confirmOrder">确认预约</string>
+    <string name="bindBank">绑定银行卡</string>
+    <string name="manageBank">管理银行卡</string>
+    <string name="myWallet">我的钱包</string>
+    <string name="failedTimes">你已经输入错误%1$d次，还有%2$d次机会</string>
+    <string name="bindFailed">绑定银行卡失败</string>
+    <string name="withdrew">余额提现</string>
+    <string name="charge">充值</string>
+    <string name="viewpager_indicator">%1$d/%2$d</string>
+    <string name="setGroupDetail">设置群信息</string>
+    <string name="selectContacts">选择联系人</string>
+    <string name="complete">完成</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="groupNote">群说明</string>
+    <string name="groupName">群名称</string>
+    <string name="findOutFromAddress">导入通信录</string>
+    <string name="sendLuckMondy">发红包</string>
+    <string name="myLuckMondy">我的红包</string>
+    <string name="ownerLuckMondy">%1$s的红包</string>
+    <string name="allLuckMoney">%1$d个红包共%2$s元</string>
+    <string name="fetchMoney">领取%1$s元</string>
+    <string name="scan_text">将二维码放入框内, 即可自动扫描</string>
+    <string name="shop_red_package">商家红包</string>
+    <string name="scan">扫一扫</string>
+    <string name="personalComments">个人评价</string>
+    <string name="shopComments">商家评价</string>
+    <string name="submitComments">发表评价</string>
+    <string name="showComments">查看评价</string>
+</resources>

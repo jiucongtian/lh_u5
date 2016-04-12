@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray" >
+    <include
+        android:id="@+id/header"
+        layout="@layout/normal_header" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/footer_height"
+        style="@style/normal_white"
+        android:background="@color/green"
+        android:text="@string/nextStep"
+        android:id="@+id/tvNextStep"
+        android:layout_alignParentBottom="true"
+        android:gravity="center" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/header"
+        android:layout_above="@+id/tvNextStep">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp">
+
+            <TextView
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                style="@style/normal_deep_gray"
+                android:text="群名称" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/etGroupName"
+                style="@style/normal_deep_gray"
+                android:background="@color/transparent"
+                android:hint="请设置群名称"
+                android:gravity="center"
+                android:singleLine="true"
+                android:textColorHint="@color/light_gray" />
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/imageView12"
+            android:src="@drawable/line_grey"
+            android:scaleType="fitXY"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:layout_width="70dp"
+            android:layout_height="wrap_content"
+            style="@style/normal_deep_gray"
+            android:text="群说明"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@color/white"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="3dp">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:id="@+id/etGroupNote"
+                android:background="@color/white"
+                android:hint="请设置群说明..."
+                android:textColorHint="@color/light_gray"
+                android:gravity="top"
+                android:layout_margin="3dp" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

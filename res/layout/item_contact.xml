@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<TextView
+	    android:id="@+id/item_groupTv"
+	    style="@style/small_deep_gray"
+	    android:layout_width="match_parent"
+	    android:layout_height="30dp"
+	    android:background="@color/light_cream"
+	    android:gravity="center_vertical"
+	    android:paddingLeft="3dp"
+	    android:text="A"
+	    android:textSize="17sp" />
+	
+	<TextView
+	    android:id="@+id/item_nameTv"
+	    style="@style/small_black"
+	    android:layout_width="match_parent"
+	    android:layout_height="40dp"
+	    android:background="@color/white"
+	    android:gravity="center_vertical"
+	    android:paddingLeft="5dp"
+	    android:text="北京" />
+
+	<ImageView
+	    android:id="@+id/imageView1"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:src="@drawable/line_grey" />
+
+</LinearLayout>

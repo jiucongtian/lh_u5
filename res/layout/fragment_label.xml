@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height"
+        android:background="@color/orange" >
+
+        <com.longhuapuxin.view.RoundCornerImageView
+            android:id="@+id/imgPortrait"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:id="@+id/headerText"
+            style="@style/x_large_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/label_title" />
+
+        <ImageButton
+            android:id="@+id/searchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@color/transparent"
+            android:src="@drawable/shop_nav_search" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/labelBodyLayout"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        tools:visibility="visible"
+        android:visibility="invisible" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center_horizontal"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/label_prompt"
+                style="@style/small_orange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="@string/label_prompt" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="290dp" >
+
+                <ImageView
+                    android:id="@+id/label_bg"
+                    android:layout_width="230dp"
+                    android:layout_height="230dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/label_content_button_middle_bg" />
+
+                <RelativeLayout
+                    android:id="@+id/topLabelContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="290dp"
+                    android:layout_marginBottom="10dp" >
+
+                    <ImageView
+                        android:id="@+id/center_anchor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/hide_dot" />
+
+                    <RelativeLayout
+                        android:id="@+id/label_1"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="69dp"
+                        android:layout_toLeftOf="@id/center_anchor" >
+
+                        <com.longhuapuxin.view.RoundCornerImageView
+                            android:id="@+id/label_img_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="6dp"
+                            android:cropToPadding="true"
+                            android:scaleType="centerCrop" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/label_2"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_above="@id/center_anchor"
+                        android:layout_marginBottom="47dp"
+                        android:layout_marginRight="24dp"
+                        android:layout_toLeftOf="@id/center_anchor" >
+
+                        <com.longhuapuxin.view.RoundCornerImageView
+                            android:id="@+id/label_img_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="6dp"
+                            android:cropToPadding="true"
+                            android:scaleType="centerCrop" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/label_3"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_above="@id/center_anchor"
+                        android:layout_marginBottom="47dp"
+                        android:layout_marginLeft="24dp"
+                        android:layout_toRightOf="@id/center_anchor" >
+
+                        <com.longhuapuxin.view.RoundCornerImageView
+                            android:id="@+id/label_img_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="6dp"
+                            android:cropToPadding="true"
+                            android:scaleType="centerCrop" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/label_4"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="69dp"
+                        android:layout_toRightOf="@id/center_anchor" >
+
+                        <com.longhuapuxin.view.RoundCornerImageView
+                            android:id="@+id/label_img_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="6dp"
+                            android:cropToPadding="true"
+                            android:scaleType="centerCrop" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/label_5"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_below="@id/center_anchor"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="47dp"
+                        android:layout_toRightOf="@id/center_anchor" >
+
+                        <com.longhuapuxin.view.RoundCornerImageView
+                            android:id="@+id/label_img_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="6dp"
+                            android:cropToPadding="true"
+                            android:scaleType="centerCrop" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:id="@+id/label_6"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_below="@id/center_anchor"
+                        android:layout_marginRight="24dp"
+                        android:layout_marginTop="47dp"
+                        android:layout_toLeftOf="@id/center_anchor" >
+
+                        <com.longhuapuxin.view.RoundCornerImageView
+                            android:id="@+id/label_img_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerInParent="true"
+                            android:layout_margin="6dp"
+                            android:cropToPadding="true"
+                            android:scaleType="centerCrop" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/label_2"
+                        android:layout_toLeftOf="@+id/label_2"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/topLabelCount2"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="100位" />
+
+                        <TextView
+                            android:id="@+id/topLabelName2"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="软件工程"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignTop="@+id/label_3"
+                        android:layout_toRightOf="@+id/label_3"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/topLabelCount3"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="100位" />
+
+                        <TextView
+                            android:id="@+id/topLabelName3"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="软件工程"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/label_1"
+                        android:layout_marginBottom="-25dp"
+                        android:layout_marginRight="-30dp"
+                        android:layout_toLeftOf="@id/label_1"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/topLabelCount1"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="100位" />
+
+                        <TextView
+                            android:id="@+id/topLabelName1"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="软件工程"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/label_4"
+                        android:layout_marginBottom="-25dp"
+                        android:layout_marginLeft="-30dp"
+                        android:layout_toRightOf="@id/label_4"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/topLabelCount4"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="100位" />
+
+                        <TextView
+                            android:id="@+id/topLabelName4"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="软件工程"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/label_6"
+                        android:layout_marginBottom="-10dp"
+                        android:layout_marginRight="-10dp"
+                        android:layout_toLeftOf="@id/label_6"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/topLabelCount6"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="100位" />
+
+                        <TextView
+                            android:id="@+id/topLabelName6"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="软件工程"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignBottom="@id/label_5"
+                        android:layout_marginBottom="-10dp"
+                        android:layout_marginLeft="-10dp"
+                        android:layout_toRightOf="@id/label_5"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/topLabelCount5"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="100位" />
+
+                        <TextView
+                            android:id="@+id/topLabelName5"
+                            style="@style/tiny_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:text="软件工程"
+                            android:visibility="gone" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <ImageButton
+                    android:id="@+id/changeBtn"
+                    android:layout_width="83dp"
+                    android:layout_height="83dp"
+                    android:layout_gravity="center"
+                    android:background="@color/transparent"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/label_content_button_middle" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="1"
+                android:background="@color/transparent" >
+
+                <RelativeLayout
+                    android:id="@+id/labelContentLeft"
+                    android:layout_width="70dp"
+                    android:layout_height="65dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="2dp" >
+
+                    <ImageView
+                        android:id="@+id/iv_my_label"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/labe_content_left_bg" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:orientation="vertical" >
+
+                        <TextView
+                            android:id="@+id/textView2"
+                            style="@style/large_orange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="我的" />
+
+                        <TextView
+                            android:id="@+id/textView3"
+                            style="@style/large_orange"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="标签" />
+                    </LinearLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/labelContentRight"
+                    android:layout_width="70dp"
+                    android:layout_height="65dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="2dp" >
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@drawable/labe_content_right_bg" />
+
+                    <FrameLayout
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp" >
+
+                        <ImageView
+                            android:id="@+id/myLabelPhoto"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="1dp"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/photo_error" />
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/avatar_box_mine" />
+                    </FrameLayout>
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="65dp"
+                    android:layout_toLeftOf="@id/labelContentRight"
+                    android:layout_toRightOf="@id/labelContentLeft" >
+
+                    <ImageView
+                        android:id="@+id/myLabelBg"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="fitXY"
+                        android:src="@color/white" />
+
+                    <TextView
+                        android:id="@+id/myLabelText"
+                        style="@style/large_orange"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="乐器演奏" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

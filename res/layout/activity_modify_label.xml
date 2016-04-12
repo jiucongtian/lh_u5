@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical">
+
+    <include
+        android:id="@+id/header"
+        layout="@layout/normal_header" />
+
+    <Button
+        android:id="@+id/commitBtn"
+        style="@style/normal_white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/main_footer_height"
+        android:layout_alignParentBottom="true"
+        android:background="@color/green"
+        android:gravity="center"
+        android:text="确认修改" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/commitBtn"
+        android:layout_below="@id/header"
+        android:orientation="vertical">
+
+        <ScrollView
+            android:id="@+id/scrollView1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="30dp"
+                        android:clickable="false"
+                        android:focusable="false"
+                        android:focusableInTouchMode="false"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/tv_skill_category"
+                            style="@style/normal_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="false"
+                            android:text="技能分类"
+                            android:layout_centerVertical="true" />
+
+                        <EditText
+                            android:id="@+id/edtTxt_skill_category"
+                            style="@style/normal_deep_gray"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="40dp"
+                            android:layout_toRightOf="@+id/tv_skill_category"
+                            android:background="@color/transparent"
+                            android:clickable="false"
+                            android:editable="false"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:gravity="center"
+                            android:hint="请选择技能分类"
+                            android:singleLine="true"
+                            android:textColorHint="@color/shallow_gray"
+                            android:layout_centerVertical="true" />
+
+                        <ImageView
+                            android:id="@+id/iv_skill_category"
+                            android:layout_width="55dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:scaleType="center"
+                            android:src="@drawable/shop_region_right" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lv_skill_category_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/bg_gray"
+                        android:orientation="vertical"
+                        tools:visibility="visible"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/imageView6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/line_grey" />
+
+                        <com.longhuapuxin.u5.MyGridView
+                            android:id="@+id/gv_skill_category"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:horizontalSpacing="5dp"
+                            android:listSelector="@color/transparent"
+                            android:numColumns="3"
+                            android:verticalSpacing="5dp">
+
+                        </com.longhuapuxin.u5.MyGridView>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/line_grey" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="30dp">
+
+                        <TextView
+                            android:id="@+id/tv_skill_name"
+                            style="@style/normal_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentTop="false"
+                            android:text="技能名称"
+                            android:layout_centerVertical="true" />
+
+                        <EditText
+                            android:id="@+id/edtTxt_skill_name"
+                            style="@style/normal_deep_gray"
+                            android:layout_width="150dp"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginRight="40dp"
+                            android:layout_toRightOf="@+id/tv_skill_name"
+                            android:background="@color/transparent"
+                            android:gravity="center"
+                            android:hint="请选择输入技能"
+                            android:singleLine="true"
+                            android:focusable="false"
+                            android:focusableInTouchMode="false"
+                            android:textColorHint="@color/shallow_gray"
+                            android:layout_centerVertical="true"
+                            android:maxLength="6" />
+
+                        <ImageView
+                            android:id="@+id/iv_skill_name"
+                            android:layout_width="55dp"
+                            android:layout_height="20dp"
+                            android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
+                            android:scaleType="center"
+                            android:src="@drawable/shop_region_right" />
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lv_skill_name_container"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/bg_gray"
+                        android:orientation="vertical"
+                        tools:visibility="visible"
+                        android:visibility="gone">
+
+                        <ImageView
+                            android:id="@+id/imageView11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/line_grey" />
+
+                        <com.longhuapuxin.u5.MyGridView
+                            android:id="@+id/gv_skill_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_marginTop="5dp"
+                            android:horizontalSpacing="5dp"
+                            android:listSelector="@color/transparent"
+                            android:numColumns="3"
+                            android:verticalSpacing="5dp">
+
+                        </com.longhuapuxin.u5.MyGridView>
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="30dp"
+                        android:src="@drawable/line_grey" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="30dp">
+                        <TextView
+                            android:id="@+id/tv_unit_price"
+                            style="@style/normal_deep_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:text="价        格" />
+
+                        <EditText
+                            android:id="@+id/ev_unit_price"
+                            style="@style/normal_orange"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:background="@color/light_cream"
+                            android:gravity="center"
+                            android:numeric="decimal"
+                            android:singleLine="true"
+                            android:hint="单价"
+                            android:textColorHint="@color/shallow_gray" />
+                        <TextView
+                            style="@style/normal_light_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="2dp"
+                            android:layout_marginRight="2dp"
+                            android:gravity="center"
+                            android:text="元"/>
+
+                        <EditText
+                            android:id="@+id/ev_unit"
+                            style="@style/normal_orange"
+                            android:layout_width="0dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginRight="10dp"
+                            android:background="@color/light_cream"
+                            android:gravity="center"
+                            android:singleLine="true"
+                            android:textColorHint="@color/shallow_gray"
+                            android:hint="单位"
+                            android:maxLength="5" />
+                    </LinearLayout>
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:layout_marginLeft="30dp">-->
+
+                        <!--<TextView-->
+                            <!--android:id="@+id/tv_unit_price_old"-->
+                            <!--style="@style/normal_deep_gray"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:text="单        价" />-->
+
+                        <!--<EditText-->
+                            <!--android:id="@+id/ev_unit_price"-->
+                            <!--style="@style/normal_orange"-->
+                            <!--android:layout_width="150dp"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:layout_marginRight="40dp"-->
+                            <!--android:layout_toRightOf="@id/tv_unit_price_old"-->
+                            <!--android:background="@android:color/transparent"-->
+                            <!--android:gravity="center"-->
+                            <!--android:hint="请输入交易单价"-->
+                            <!--android:numeric="decimal"-->
+                            <!--android:singleLine="true"-->
+                            <!--android:textColorHint="@color/shallow_gray" />-->
+
+
+                    <!--</RelativeLayout>-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/imageView8"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:layout_marginLeft="30dp"-->
+                        <!--android:src="@drawable/line_grey" />-->
+
+                    <!--<RelativeLayout-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="30dp"-->
+                        <!--android:layout_marginLeft="30dp" >-->
+
+                        <!--<TextView-->
+                            <!--style="@style/normal_deep_gray"-->
+                            <!--android:id="@+id/textView"-->
+                            <!--android:layout_width="wrap_content"-->
+                            <!--android:layout_height="wrap_content"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:text="计价方式"/>-->
+
+                        <!--<EditText-->
+                            <!--android:id="@+id/ev_unit"-->
+                            <!--style="@style/normal_orange"-->
+                            <!--android:layout_width="150dp"-->
+                            <!--android:layout_height="match_parent"-->
+                            <!--android:layout_alignParentRight="true"-->
+                            <!--android:layout_centerVertical="true"-->
+                            <!--android:layout_marginRight="40dp"-->
+                            <!--android:layout_toRightOf="@+id/textView"-->
+                            <!--android:background="@android:color/transparent"-->
+                            <!--android:gravity="center"-->
+                            <!--android:hint="每次/每分钟/每小时，计价"-->
+                            <!--android:singleLine="true"-->
+                            <!--android:textColorHint="@color/shallow_gray"-->
+                            <!--android:maxLength="5" />-->
+                    <!--</RelativeLayout>-->
+
+                    <!--<ImageView-->
+                        <!--android:id="@+id/imageView"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:src="@drawable/line_grey" />-->
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="15dp"
+                    android:background="@color/white"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginLeft="30dp"
+                        android:orientation="vertical">
+
+                        <TextView
+                            style="@style/normal_deep_gray"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"
+                            android:text="说明" />
+
+                        <EditText
+                            android:id="@+id/txtComment"
+                            style="@style/normal_deep_gray"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:background="@color/transparent"
+                            android:ems="10"
+                            android:gravity="top"
+                            android:hint="描述你的技能吧"
+                            android:inputType="textMultiLine"
+                            android:minLines="5"
+                            android:textColorHint="@color/shallow_gray"
+                            android:maxLength="150" />
+
+                        <TextView
+                            style="@style/normal_deep_gray"
+                            android:layout_width="50dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:layout_marginTop="5dp"
+                            android:text="认证" />
+
+                        <com.longhuapuxin.u5.MyGridView
+                            android:id="@+id/labelImages"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="20dp"
+                            android:cacheColorHint="#00000000"
+                            android:gravity="center"
+                            android:horizontalSpacing="10dp"
+                            android:listSelector="#00000000"
+                            android:numColumns="3"
+                            android:stretchMode="columnWidth"
+                            android:verticalSpacing="10dp"></com.longhuapuxin.u5.MyGridView>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_gravity="center_horizontal">
+
+                        <CheckBox
+                            style="@style/MyCheckBox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:id="@+id/cbAgreePolicy"
+                            android:checked="true"
+                            android:layout_marginRight="5dp" />
+
+                        <TextView
+                            style="@style/normal_light_gray"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:text="U5技能发布及管理规范"
+                            android:id="@+id/tvReleaseProtocol"
+                            android:gravity="center" />
+                    </LinearLayout>
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/line_grey" />
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</RelativeLayout>

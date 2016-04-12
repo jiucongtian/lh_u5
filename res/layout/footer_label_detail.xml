@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/txtEst"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="评价"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/txtEstCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_toRightOf="@+id/txtEst"
+            android:textColor="@color/deep_gray"
+            android:textSize="16sp"
+            tools:text="(80条)" />
+
+        <TextView
+            android:id="@+id/txtViewEstimation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_margin="10dp"
+            android:text="查看全部评价"
+            android:textColor="@color/deep_gray"
+            android:textSize="20sp" />
+    </RelativeLayout>
+
+    <com.longhuapuxin.view.MyListView
+        android:id="@+id/lstEstimations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/lstEstimations"
+        android:layout_marginBottom="@dimen/footer_height"
+        android:layout_marginTop="4dp"
+        android:background="@color/white"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@color/transparent"
+        android:dividerHeight="0dp"
+        android:listSelector="@color/transparent">
+
+    </com.longhuapuxin.view.MyListView>
+
+</LinearLayout>

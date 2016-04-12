@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="grey">#808080</color>
+    <color name="gray">#595858</color>
+    <color name="bg_gray">#f1f3f2</color>
+    <color name="deep_gray">#666666</color>
+    <color name="light_gray">#d3c9c2</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="orange">#f35901</color>
+    <color name="blue">#3b5998</color>
+    <color name="green">#c2c027</color>
+    <color name="deep_green">#188e8d</color>
+    <color name="dark_green">#0e6968</color>
+    <color name="milk_white">#f7f7ed</color>
+    <color name="cream_light">#f2f3e9</color>
+    <color name="cream">#f5f3ea</color>
+    <color name="light_cream">#ecebe8</color>
+    <color name="deep_cream">#f7f7ed</color>
+    <color name="red">#e71f19</color>
+    <color name="yellow">#FFD300</color>
+    <color name="title_blue">#5473AD</color>
+    <color name="dark_gray">#404040</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="translucent">#B0000000</color>
+    <color name="translucent_white">#80F1F3F2</color>
+    <!-- 暗灰色 -->
+    <color name="dimgrey">#696969</color>
+    <!-- 雪白色 -->
+    <color name="floralwhite">#FFFAF0</color>
+    <color name="light_blue">#6593cb</color>
+    <color name="shallow_gray">#c5c5c5</color>
+    <color name="result_view">#b0000000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="possible_result_points">#00000000</color>
+
+</resources>

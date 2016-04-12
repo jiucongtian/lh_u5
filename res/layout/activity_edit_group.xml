@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_gray"
+    android:orientation="vertical" >
+
+    <include layout="@layout/normal_header" />
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            style="@style/normal_deep_gray"
+            android:id="@+id/etGroupName"
+            android:layout_margin="10dp"
+            android:background="@color/transparent"
+            android:hint="请输入群名称"
+            android:textColorHint="@color/light_gray"
+            android:maxLength="20" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            style="@style/normal_deep_gray"
+            android:textColorHint="@color/light_gray"
+            android:id="@+id/etGroupNote"
+            android:layout_margin="10dp"
+            android:background="@color/transparent"
+            android:hint="请输入群说明"
+            android:gravity="top" />
+    </LinearLayout>
+
+</LinearLayout>

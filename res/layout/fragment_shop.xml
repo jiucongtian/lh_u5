@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/header_height"
+        android:background="@color/orange" >
+
+        <com.longhuapuxin.view.RoundCornerImageView
+            android:id="@+id/imgPortrait"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/avatar" />
+
+        <TextView
+            android:id="@+id/headerText"
+            style="@style/x_large_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="商家" />
+
+        <Button
+            android:id="@+id/shopPay"
+            style="@style/large_white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:background="@color/transparent"
+            android:gravity="center_vertical"
+            android:text="@string/scan" />
+
+        <LinearLayout
+            android:layout_marginBottom="10dp"
+            android:id="@+id/linearLayout1"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/headerText" >
+
+            <TextView
+                android:textSize="14dp"
+                android:id="@+id/shop_region"
+                style="@style/normal_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="成都" />
+
+            <ImageView
+                android:layout_marginTop="3dp"
+                android:id="@+id/imageView3"
+                android:layout_gravity="center_vertical"
+                android:layout_width="10dp"
+                android:layout_height="10dp"
+                android:src="@drawable/shop_region" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <ViewStub
+        android:id="@+id/stub_import"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:inflatedId="@+id/delay_load_shop"
+        android:layout="@layout/view_stub_shop_new" />
+
+</LinearLayout>
